@@ -63,7 +63,6 @@ window.onscroll=function(event){
  document.DOMMouseScroll = function(){
   var e = e || window.event;
   		var a = e.wheelDelta;
-  		 console.log(a)
   if(a<0){
   		   document.querySelectorAll('.container-nav')[0].style.top=-50+"px";
   		   document.querySelectorAll('.container-nav')[1].style.top=-50+"px";
