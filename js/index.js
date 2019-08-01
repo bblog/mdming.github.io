@@ -60,10 +60,23 @@ window.onscroll=function(event){
   // 		   document.querySelector('.container-nav').style.top=0+"px";
   // }
   //  }
+ document.DOMMouseScroll = function(){
+  var e = e || window.event;
+  		var a = e.wheelDelta;
+  		 console.log(a)
+  if(a<0){
+  		   document.querySelectorAll('.container-nav')[0].style.top=-50+"px";
+  		   document.querySelectorAll('.container-nav')[1].style.top=-50+"px";
+  }
+  else{
+  		document.querySelectorAll('.container-nav')[0].style.top=0+"px";
+  		document.querySelectorAll('.container-nav')[1].style.top=0+"px";
+  }
+   }
    document.onmousewheel = function(){
    var e = e || window.event;
    		var a = e.wheelDelta;
-   		 console.log(a)
+   		
    if(a<0){
    		   document.querySelectorAll('.container-nav')[0].style.top=-50+"px";
    		   document.querySelectorAll('.container-nav')[1].style.top=-50+"px";
@@ -72,6 +85,6 @@ window.onscroll=function(event){
    		document.querySelectorAll('.container-nav')[0].style.top=0+"px";
 		document.querySelectorAll('.container-nav')[1].style.top=0+"px";
    }
-  		 console.log(a)
+  		
    }         
 // // }
