@@ -1,90 +1,98 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="keywords" content="蒙大明,个人网站, 网站示例, 前端">
-		<meta name="description" content="蒙大明的GH,
+<!-- ===============================================
+版本：1.1  日期：2019.8.2
+修改：适应移动端，使用了touch事件，实现触屏实现导航栏、置顶键的出现区消失
+优化js代码简化结构    实现函数闭包
+增加了卡片的hover效果 完善细节  删除多余的备注
+ =========================duo===============================-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="蒙大明,个人网站, 网站示例, 前端">
+	<meta name="description" content="蒙大明的GH,
 		是蒙大明在Github上搭建的静态网页,用于练习">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="icon" sizes="any" mask="" href="img/indexicon.PNG">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-		<link rel="stylesheet" type="text/css" href="font_awesomePro_5.8.1/css/all.css">
-		<title>蒙大明的GH</title>
-	</head>
-	<body>
-		
-		<!-- 手机左边菜单展开栏<i class="fab fa-codiepie"></i> -->
-		<div class="menu-nav">
-			<ul class="menu-nav-list">
-				<li><a href=""><i class="fas fa-home"></i>首页</a></li>
-				<li><a href=""><i class="far fa-paper-plane"></i> web项目</a></li>
-				<li><a href=""><i class="fab fa-codiepie"></i> web学习</a></li>
-				<li><a href=""><i class="far fa-school"></i> 大学之道</a></li>
-				<li><a href=""><i class="fal fa-book-reader"></i> 关于本站</a></li>
-			</ul>
-			<!-- <div class="menu-nav-footer"></div> -->
-		</div>
-		<!-- 头部 -->
-		<header class="col-10">
-			<!-- 手机导航栏 -->
-			<nav class="nav-m container-nav">
-				<!-- 按钮实现方法:三条线通过转换(旋转角度),第二条隐藏,加过渡效果更好看 -->
-				<div class="menu">
-					<div class="bar1"></div>
-					<div class="bar2"></div>
-					<div class="bar3"></div>
-				</div>
-				<a class="middle-logo" href="index.html"><span>DM</span></a>
-				<input class="search" type="text" placeholder="搜索"></input>
-			</nav>
-			<!-- PC导航栏 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" sizes="any" mask="" href="img/indexicon.PNG">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="font_awesomePro_5.8.1/css/all.css">
+	<title>蒙大明的GH</title>
+</head>
+
+<body>
+
+	<!-- 手机左边菜单展开栏-->
+	<div class="menu-nav">
+		<ul class="menu-nav-list">
+			<li><a href=""><i class="fas fa-home"></i>首页</a></li>
+			<li><a href=""><i class="far fa-paper-plane"></i> web项目</a></li>
+			<li><a href=""><i class="fab fa-codiepie"></i> web学习</a></li>
+			<li><a href=""><i class="far fa-school"></i> 大学之道</a></li>
+			<li><a href=""><i class="fal fa-book-reader"></i> 关于本站</a></li>
+		</ul>
+		<!-- <div class="menu-nav-footer"></div> -->
+	</div>
+	<!-- 头部 -->
+	<header class="col-10">
+		<!-- 手机导航栏 -->
+		<nav class="nav-m container-nav">
+			<!-- 按钮实现方法:三条线通过转换(旋转角度),第二条隐藏,加过渡效果更好看 -->
+			<div class="menu">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
+			<a class="middle-logo" href="index.html"><span>DM</span></a>
+			<input class="search" type="text" placeholder="搜索"></input>
+		</nav>
+		<!-- PC导航栏 -->
 		<nav class="nav-big container-nav">
-				<a href="index.html"><span class="logo">DM</span></a>
-				<ul class="nav-list">
-					<li><a href="">首页</a></li>
-					<li><a href="">web项目</a></li>
-					<li><a href="">web学习</a></li>
-					<li><a href="">大学之道</a></li>
-					<li><a href="">关于本站</a></li>
-				</ul>
-				<input class="search" type="text" placeholder="搜索"></input>
-			</nav>
-		</header>
-		<!-- 内容主体区 -->
-		<main>
-			<!-- my web部分 -->
-			<div class="container myweb">
-				<header class="section-header">
-					<h2 >My Web</h2>
-					<p>展示Web示例</p>
-				</header>
-				<section class="row">
-					<div class="card-left col-4">
-						
-					</div>
-					<div class="card-right col-4">
-						
-					</div>
-					
-				</section>
-				<section class="row sec-more ">
-					<a class="more " href="#"><i class="far fa-plus-square"></i> More Demos</a>
-				</section>
-				</section>
+			<a href="index.html"><span class="logo">DM</span></a>
+			<ul class="nav-list">
+				<li><a href="">首页</a></li>
+				<li><a href="">web项目</a></li>
+				<li><a href="">web学习</a></li>
+				<li><a href="">大学之道</a></li>
+				<li><a href="">关于本站</a></li>
+			</ul>
+			<input class="search" type="text" placeholder="搜索"></input>
+		</nav>
+	</header>
+	<!-- 内容主体区 -->
+	<main>
+		<!-- my web部分 -->
+		<div class="container myweb">
+			<header class="section-header">
+				<h2>My Web</h2>
+				<p>展示Web示例</p>
+			</header>
+			<section class="row">
+				<div class="card-left col-4">
+
+				</div>
+				<div class="card-right col-4">
+
+				</div>
+
+			</section>
+			<section class="row sec-more ">
+				<a class="more " href="#"><i class="far fa-plus-square"></i> More Demos</a>
+			</section>
+			<!-- </section> -->
 			<!-- 大学部分 -->
 			<div class="container university">
 				<header class="section-header">
-					<h2 >大学之道</h2>
+					<h2>大学之道</h2>
 					<p>大学生的大宝藏</p>
 				</header>
 				<section class="row">
 					<div class="card-left col-4">
-						
+
 					</div>
-					<div class="card-right col-4">
-						
+					<div class="card-right  col-4">
+
 					</div>
-					
+
 				</section>
 				<section class="row sec-more ">
 					<a class="more " href="#"><i class="far fa-plus-square"></i> More Ways</a>
@@ -93,40 +101,41 @@
 			<!-- 关于本站部分 -->
 			<div class="container me">
 				<header class="section-header">
-					<h2 >关于本站</h2>
+					<h2>关于本站</h2>
 					<p>描述网站的开发过程等</p>
 				</header>
 				<section class="row">
 					<div class="card-left col-4">
-						
+
 					</div>
 					<div class="card-right col-4">
-						
+
 					</div>
-					
+
 				</section>
 				<section class="row sec-more ">
 					<a class="more " href="#"><i class="far fa-plus-square"></i> MORE</a>
 				</section>
 			</div>
-		</main>
-		<!-- 底部栏 -->
-		<footer class="footer">
-			<ul class="shield">
-				<li class="col-5"><a><span>开发者</span><span><i class="far fa-address-card"></i> 蒙大明</span></a>
-				</li>
-				<li class="col-5"><a><span>联系方式</span><span class="qq-link" onmouseover=function() {}><i class="fab fa-qq"></i> 790430354</span></a>
-				</li>
-				<li class="col-5"><a><span>版本</span><span><i class="far fa-copyright"></i> v1.0.0</span></a>
-				</li>
-				<li class="col-5"><a><span>更新日期</span><span><i class="fal fa-clock"></i> 2019/8/1</span></a>
-				</li>
-			</ul>
-		</footer>
-		<!-- 返回按钮及侧边栏 -->
-       <aside  class="top">
-		   <a href="#top"><i class="fas fa-angle-up"></i></a>
-	   </aside>
-<script src="js/index.js" type="text/javascript"></script>
-	</body>
+	</main>
+	<!-- 底部栏 -->
+	<footer class="footer">
+		<ul class="shield">
+			<li class="col-5"><a><span>开发者</span><span><i class="far fa-address-card"></i> 蒙大明</span></a>
+			</li>
+			<li class="col-5"><a><span>联系方式</span><span id="contact"><i class="fab fa-qq"></i> 790430354</span></a>
+			</li>
+			<li class="col-5"><a><span>版本</span><span><i class="far fa-copyright"></i> v1.0.0</span></a>
+			</li>
+			<li class="col-5"><a><span>更新日期</span><span><i class="fal fa-clock"></i> 2019/8/1</span></a>
+			</li>
+		</ul>
+	</footer>
+	<!-- 返回按钮及侧边栏 -->
+	<aside class="top">
+		<a href="#top"><i class="fas fa-angle-up"></i></a>
+	</aside>
+	<script src="js/index.js" type="text/javascript"></script>
+</body>
+
 </html>
