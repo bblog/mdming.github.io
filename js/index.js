@@ -60,6 +60,7 @@ window.onscroll=function(event){
   // 		   document.querySelector('.container-nav').style.top=0+"px";
   // }
   //  }
+ window.onload = function(){
  document.DOMMouseScroll = function(){
   var e = e || window.event;
   		var a = e.wheelDelta;
@@ -86,4 +87,4 @@ window.onscroll=function(event){
    }
   		
    }         
-// // }
+ }
