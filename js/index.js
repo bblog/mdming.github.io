@@ -15,7 +15,7 @@ document.querySelector('.menu').addEventListener("click",function (e){
 		document.querySelector('.container-nav').setAttribute('style','background-color: aliceblue;')
 	}
 })
-window.onscroll=function(event){
+window.onload=function(event){
 	// var t=document.documentElement.scrollY;
 	var st= document.documentElement.scrollTop;
 	if(st>500){
