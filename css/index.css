@@ -11,6 +11,7 @@
 
 	* {
 		box-sizing: border-box;
+		text-align: center
 	}
 
 	main {
@@ -67,6 +68,7 @@
 		width: 100%;
 	}
 
+	/* 列后清除浮动相当于画一条线与下面的间开 */
 	.row:after {
 		content: "";
 		clear: both;
@@ -83,12 +85,12 @@
 
 	/* 导航栏容器 */
 	.container-nav {
-		flex-flow: row;
 		width: 100%;
 		position: fixed;
 		top: 0px;
 		height: 3.125rem;
 		transition: all .8s;
+		/*过渡效果*/
 		overflow: hidden;
 		background-color: white;
 		font-weight: 600;
@@ -120,15 +122,21 @@
 
 	.nav-list {
 		display: flex;
+		/*弹性布局*/
 		justify-content: center;
+		/*从中间开始布局*/
 		flex: 1;
-
 		margin: 0;
 		padding: 0;
 	}
 
+	#home {
+		color: blue;
+	}
+
 	.nav-list li a {
 		position: relative;
+		/*重要：  只有这里相对定位了a：after的绝对才会绑定a元素*/
 		height: 100%;
 		display: inline-block;
 		font-size: 20px;
@@ -136,7 +144,6 @@
 		margin-right: 1.2em;
 		text-align: center;
 		color: black;
-		text-decoration: none;
 	}
 
 	.nav-list li a:hover {
@@ -145,21 +152,24 @@
 
 	.nav-list li a:after {
 		content: "";
-		box-sizing: inherit;
 		width: 100%;
 		height: 4px;
 		position: absolute;
+		/*绝对定位  脱离文本流*/
 		bottom: 0;
 		left: 0;
 		background-color: fuchsia;
 		visibility: hidden;
 		transform: scaleX(0);
+		/*转换  x轴方向为0%*/
 		transition: all .2s ease-in;
+		/*过渡效果*/
 	}
 
 	.nav-list li a:hover:after {
 		visibility: visible;
 		transform: scaleX(1);
+		/*转换  x轴方向为100%*/
 		transition: all 0.25s ease-out;
 	}
 
@@ -192,16 +202,16 @@
 
 	.change .bar2 {
 		opacity: 0;
+		/*透明度为0*/
 	}
 
 	.change .bar3 {
 		transform: rotate(45deg) translate(-8px, -8px);
+		/*转换角度*/
 	}
 
 	/* 中间logo */
-	.middle-logo:link {
-		text-decoration: none;
-	}
+
 
 	.middle-logo {
 		display: flex;
@@ -218,14 +228,10 @@
 
 	/* 右侧搜索栏 */
 	.search {
-		/* background-color: #000000; */
 		border: solid gray 1px;
 		border-radius: 3px;
 		float: right;
 		margin: 10px 15px;
-		/* margin-top: 8px; */
-		/* margin-right: 16px; */
-		/* border: none; */
 		font-size: 10px;
 		width: 60px;
 	}
@@ -234,6 +240,104 @@
 		border: solid blue 1.5px;
 	}
 
+	/* 右侧切换按钮 */
+	.switch-tips {
+		padding-top: 4px;
+		padding-right: 2px;
+		line-height: 11px;
+		font-size: 9px;
+	}
+
+	.switch {
+		position: relative;
+		top: 7px;
+		right: 0px;
+		display: inline-block;
+		width: 60px;
+		height: 34px;
+	}
+
+	.switch input {
+		display: none;
+	}
+
+	.slider {
+		cursor: pointer;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgb(40, 207, 62);
+		-webkit-transition: .4s;
+		transition: .4s;
+		border-radius: 34px;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: "";
+		height: 26px;
+		width: 26px;
+		left: 4px;
+		bottom: 4px;
+		border-radius: 50%;
+		background-color: white;
+		-webkit-transition: .4s;
+		transition: .4s;
+	}
+
+	input:checked+.slider {
+		/*通过表单的值切换颜色*/
+		background-color: #2196F3;
+	}
+
+	input:checked+.slider:before {
+		/*通过表单的值进行转换效果中的位移效果*/
+		-webkit-transform: translateX(26px);
+		-ms-transform: translateX(26px);
+		transform: translateX(26px);
+	}
+
+	/* 手机底部导航栏 */
+	.nav-bottom {
+		display: none;
+		width: 100%;
+		background: white;
+		position: fixed;
+		/*脱离文本流定位*/
+		bottom: 0;
+		z-index: 1;
+	}
+
+	.nav-bottom ul {
+		border-top: px solid #000;
+		box-shadow: 0px 1px 10px #0000FF;
+		padding: 0;
+		display: flex;
+		/* 父元素弹性布局 */
+		margin: 0;
+	}
+
+	.nav-bottom ul li {
+		flex: 1;
+		/*子代等距划分*/
+	}
+
+	.nav-bottom ul li:first-child {
+		background-color: aliceblue;
+	}
+
+	.nav-bottom ul li a i {
+		display: block;
+		padding: 5px;
+	}
+
+	.nav-bottom ul li a {
+		color: #000000;
+		display: block;
+		padding-bottom: 8px;
+	}
 
 	/* 菜单按钮弹出栏 */
 	.menu-nav {
@@ -287,21 +391,15 @@
 
 @media screen {
 
-	/* 为各部分建立容器 */
-	.container {
-		width: 100%;
-	}
-
 	/* MyWeb部分 */
 	.myweb {
-		position: relative;
+		/* position: relative; */
 		background-color: mintcream;
 	}
 
 	/* 大学之道部分 */
-	.university {
+	.college {
 		background-color: gold;
-		;
 	}
 
 	/* TOD关于本站部分 */
@@ -310,7 +408,7 @@
 
 	}
 
-	.university .section-header {
+	.college .section-header {
 		color: red;
 	}
 
@@ -322,7 +420,7 @@
 /* 卡片式 */
 @media screen {
 	.section-header {
-		padding: 40px 0;
+		padding-top: 20px;
 		width: 100%;
 		text-align: center;
 		font-size: 30px;
@@ -335,7 +433,7 @@
 	}
 
 	.card-left {
-		margin: 3% 2.5% 0px 7.5%;
+		margin: 1% 2.5% 0% 7.5%;
 		border-radius: 2px;
 		border-color: rgb(219, 226, 232);
 		border-style: solid;
@@ -344,11 +442,19 @@
 		border-top-width: 5px;
 		background-color: white;
 		box-shadow: 15px 10px 6px rgba(46, 61, 73, 0.08);
-		height: 350px;
+		height: 450px;
+		display: block;
+	}
+
+	.card-left:hover,
+	.card-right:hover {
+		transform: scale(1.1);
+		box-shadow: 0px 1px 10px #0000FF;
+
 	}
 
 	.card-right {
-		display: flex;
+		display: block;
 		border-radius: 2px;
 		border-color: rgb(219, 226, 232);
 		border-style: solid;
@@ -357,12 +463,65 @@
 		border-top-width: 5px;
 		background-color: white;
 		box-shadow: 15px 10px 6px rgba(46, 61, 73, 0.08);
-		height: 350px;
-		margin: 3% 7.5% 0% 2.3%;
-		z-index: 10000;
+		height: 450px;
+		margin: 1% 7.5% 0% 2.3%;
 	}
 
+	.card-h2 {
+		padding: 15px 0;
+	}
 
+	.card-left p:nth-last-child(2),
+	.card-right p:nth-last-child(2) {
+		font-weight: 550;
+		font-size: 22px;
+		margin: 5px 0;
+	}
+
+	.card-left p:last-child,
+	.card-right p:last-child {
+		margin-top: 0;
+		margin-bottom: 2%;
+		color: grey;
+		font-size: 14px
+	}
+
+	.card-img {
+		color: red;
+		width: 76%;
+		height: 70%;
+	}
+
+	.min-card {
+		width: 23%;
+		height: 350px;
+		margin: 1% 0% 0 0;
+
+	}
+
+	.min-card .card-h2 {
+		font-size: 22px;
+		padding: 8px 0;
+	}
+
+	.min-card p:nth-last-child(2) {
+		font-weight: 700;
+		font-size: 16px;
+	}
+
+	.min-card p:last-child {
+		margin-top: 0;
+		margin-bottom: 2%;
+		color: grey;
+		font-size: 10px;
+	}
+
+	#min-card-two {
+		position: relative;
+		top: 140px;
+		left: 25px;
+
+	}
 }
 
 /* 底部栏 */
@@ -416,7 +575,7 @@
 	}
 
 	.sec-more {
-		padding: 70px 0;
+		padding: 40px 0;
 		text-align: center;
 	}
 
@@ -442,7 +601,7 @@
 		transition: all .5s;
 		opacity: 0.7;
 		position: fixed;
-		bottom: 40px;
+		bottom: 66px;
 		right: -39px;
 		background-color: #FFDEAD;
 		border: solid 1px gainsboro;
@@ -468,9 +627,30 @@
 		width: 90%;
 	}
 
+	#min-card-two {
+		position: relative;
+		top: 0;
+		left: 0;
+
+	}
+
+	.shield {
+		font-size: 10px
+	}
+
+	.shield li {
+		padding: 8px 5px;
+		width: auto;
+	}
+
+	.card-h2 {
+		padding: 8px 0;
+	}
+
 	.card-left,
 	.card-right {
 		margin: 5%;
+		height: 400px;
 	}
 
 	.sec-more {
