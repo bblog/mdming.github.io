@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
-<!-- ===============================================
-版本：1.1  日期：2019.8.2
-修改：适应移动端，使用了touch事件，实现触屏实现导航栏、置顶键的出现区消失
-优化js代码简化结构    实现函数闭包
-增加了卡片的hover效果 完善细节  删除多余的备注
- =========================duo===============================-->
+<!--
+	 ===============================================
+版本：1.2  日期：2019.8.3
+修复了自己之前的傻逼JS代码，区分页面滚动、鼠标轮盘滚动、触屏用手指滑动的区别
+将第一排页面添加小卡片，避免单调
+增加手机导航栏切换 即可切换导航栏到底部
+精简class
+ ========================================================-->
 
 <head>
 	<meta charset="utf-8">
@@ -25,16 +27,16 @@
 	<div class="menu-nav">
 		<ul class="menu-nav-list">
 			<li><a href=""><i class="fas fa-home"></i>首页</a></li>
-			<li><a href=""><i class="far fa-paper-plane"></i> web项目</a></li>
-			<li><a href=""><i class="fab fa-codiepie"></i> web学习</a></li>
+			<li><a href=""><i class="far fa-paper-plane"></i> web前端</a></li>
 			<li><a href=""><i class="far fa-school"></i> 大学之道</a></li>
-			<li><a href=""><i class="fal fa-book-reader"></i> 关于本站</a></li>
+			<li><a href=""><i class="fal fa-book-reader"></i> 作者与本站</a></li>
 		</ul>
 		<!-- <div class="menu-nav-footer"></div> -->
 	</div>
 	<!-- 头部 -->
 	<header class="col-10">
 		<!-- 手机导航栏 -->
+		<!-- 顶部 -->
 		<nav class="nav-m container-nav">
 			<!-- 按钮实现方法:三条线通过转换(旋转角度),第二条隐藏,加过渡效果更好看 -->
 			<div class="menu">
@@ -43,17 +45,31 @@
 				<div class="bar3"></div>
 			</div>
 			<a class="middle-logo" href="index.html"><span>DM</span></a>
-			<input class="search" type="text" placeholder="搜索"></input>
+			<p class="switch-tips">切换<br />导航</p>
+			<label class="switch">
+				<input type="checkbox" checked />
+				<div class="slider"></div>
+			</label>
+
+		</nav>
+		<!-- 底部导航栏 -->
+		<nav class="nav-bottom">
+			<ul>
+				<li><a href=""><i class="fas fa-home"></i>首页</a></li>
+				<li><a href=""><i class="far fa-paper-plane"></i> web前端</a></li>
+				<li><a href=""><i class="far fa-school"></i> 大学之道</a></li>
+				<li><a href=""><i class="fal fa-book-reader"></i> 作者与本站</a></li>
+			</ul>
+
 		</nav>
 		<!-- PC导航栏 -->
 		<nav class="nav-big container-nav">
 			<a href="index.html"><span class="logo">DM</span></a>
 			<ul class="nav-list">
-				<li><a href="">首页</a></li>
-				<li><a href="">web项目</a></li>
-				<li><a href="">web学习</a></li>
+				<li><a id="home" href="">首页</a></li>
+				<li><a href="">web前端</a></li>
 				<li><a href="">大学之道</a></li>
-				<li><a href="">关于本站</a></li>
+				<li><a href="">作者与本站</a></li>
 			</ul>
 			<input class="search" type="text" placeholder="搜索"></input>
 		</nav>
@@ -61,62 +77,84 @@
 	<!-- 内容主体区 -->
 	<main>
 		<!-- my web部分 -->
-		<div class="container myweb">
+		<div class="col-10 myweb">
 			<header class="section-header">
 				<h2>My Web</h2>
 				<p>展示Web示例</p>
 			</header>
 			<section class="row">
 				<div class="card-left col-4">
-
+					<h2 class="card-h2">模仿网站</h2>
+					<img class="card-img" src="/img/demo.jpg" alt="图片加载中">
+					<p>有各种很酷的布局</p>
+					<p>我相信它一定能出乎你所料</p>
 				</div>
-				<div class="card-right col-4">
-
+				<div class="card-right min-card col-2">
+					<h2 class="card-h2">小小组件</h2>
+					<img class="card-img" src="/img/zujian.jpg" alt="图片加载中" />
+					<p>制作的各种组件</p>
+					<p>点击它、拥有它</p>
 				</div>
-
+				<div id="min-card-two" class="card-right min-card col-2">
+					<h2 class="card-h2">JS小游戏</h2>
+					<img class="card-img" src="/img/game.jpg" alt="图片加载中" />
+					<p>用JavaScript做的小游戏</p>
+					<p>真的很小</p>
+				</div>
 			</section>
 			<section class="row sec-more ">
 				<a class="more " href="#"><i class="far fa-plus-square"></i> More Demos</a>
 			</section>
-			<!-- </section> -->
-			<!-- 大学部分 -->
-			<div class="container university">
-				<header class="section-header">
-					<h2>大学之道</h2>
-					<p>大学生的大宝藏</p>
-				</header>
-				<section class="row">
-					<div class="card-left col-4">
+		</div>
+		<!-- 大学部分 -->
+		<div class="col-10 college">
+			<header class="section-header">
+				<h2>大学生宝藏</h2>
+				<p>提供好用的适合大学生的工具、知识、网站等</p>
+			</header>
+			<section class="row">
+				<div class="card-left col-4">
+					<h2 class="card-h2">网站与知识</h2>
+					<img class="card-img" src="/img/website.jpg" alt="图片加载中">
+					<p>有好多有用的网站</p>
+					<p>希望她能让你一见如故</p>
+				</div>
+				<div class="card-right col-4">
+					<h2 class="card-h2">工具</h2>
+					<img class="card-img" src="/img/tool.jpg" alt="图片加载中">
+					<p>欲工其事先利其器</p>
+					<p>她将会提高你做事的效率</p>
+				</div>
+			</section>
+			<section class="row sec-more ">
+				<a class="more " href="#"><i class="far fa-plus-square"></i> 探索更多</a>
+			</section>
+		</div>
+		<!-- 关于本站部分 -->
+		<div class="col-10 me">
+			<header class="section-header">
+				<h2>作者与本站</h2>
+				<p>作者的个人空间、网站的开发过程</p>
+			</header>
+			<section class="row">
+				<div class="card-left col-4">
+					<h2 class="card-h2">我的空间</h2>
+					<img class="card-img" src="/img/chuzhong.jpg" alt="图片加载中">
+					<p>记录自己</p>
+					<p>当成记事本或收藏夹</p>
+				</div>
+				<div class="card-right col-4">
+					<h2 class="card-h2">关于本站</h2>
+					<img class="card-img" src="/img/guocheng.jpg" alt="图片加载中">
+					<p>讲述开发过程及本站信息</p>
+					<p>看似简单实则不易呀</p>
+				</div>
 
-					</div>
-					<div class="card-right  col-4">
-
-					</div>
-
-				</section>
-				<section class="row sec-more ">
-					<a class="more " href="#"><i class="far fa-plus-square"></i> More Ways</a>
-				</section>
-			</div>
-			<!-- 关于本站部分 -->
-			<div class="container me">
-				<header class="section-header">
-					<h2>关于本站</h2>
-					<p>描述网站的开发过程等</p>
-				</header>
-				<section class="row">
-					<div class="card-left col-4">
-
-					</div>
-					<div class="card-right col-4">
-
-					</div>
-
-				</section>
-				<section class="row sec-more ">
-					<a class="more " href="#"><i class="far fa-plus-square"></i> MORE</a>
-				</section>
-			</div>
+			</section>
+			<section class="row sec-more ">
+				<a class="more " href="#"><i class="far fa-plus-square"></i> 了解更多</a>
+			</section>
+		</div>
 	</main>
 	<!-- 底部栏 -->
 	<footer class="footer">
