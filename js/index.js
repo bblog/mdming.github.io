@@ -15,22 +15,25 @@ document.querySelector('.menu').addEventListener("click", function (e) {
 })
 // 顶导航栏及置顶键的响应
 window.onload = function () {
-	var st = 1;
+	var scrollTop = 0;
 	document.onscroll = function () {
-		if (st < document.documentElement.scrollTop) { //判断页面滚动的方向
+		// console.log(scrollTop);
+		if (scrollTop< (document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop) ){ //判断页面滚动的方向
+			
 			document.querySelectorAll('.container-nav')[0].style.top = -50 + "px";
 			document.querySelectorAll('.container-nav')[1].style.top = -50 + "px";
+			
 			document.querySelector('.top').style.right = -39 + "px"
 		} else {
 			document.querySelectorAll('.container-nav')[0].style.top = 0 + "px";
 			document.querySelectorAll('.container-nav')[1].style.top = 0 + "px";
 			document.querySelector('.top').style.right = 5 + "px"
+		}console.log(scrollTop);
+		if (scrollTop< 150) {
+			// document.querySelector('.top').style.right = -39 + "px"
+			
 		}
-		if (st < 150) {
-			document.querySelector('.top').style.right = -39 + "px"
-
-		}
-		st = document.documentElement.scrollTop;
+		scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;;
 	}
 
 	document.querySelector('label.switch').addEventListener("click", function () {
