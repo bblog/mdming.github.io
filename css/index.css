@@ -1,8 +1,13 @@
 /* 定义标签  默认样式 */
+html{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
 @media screen {
 	body {
-
-		margin: 0rem;
+width: 100%;
+		margin: 0px;
 	}
 
 	* {
@@ -86,7 +91,7 @@
 		width: 100%;
 		position: fixed;
 		top: 0px;
-		height: 3.125rem;
+		height: 50px;
 		transition: all .8s;
 		/*过渡效果*/
 		overflow: hidden;
@@ -391,9 +396,11 @@
 @media screen {
 
 	/* MyWeb部分 */
+	/* .min-card */
 	.myweb {
 		/* position: relative; */
 		background-color: mintcream;
+		/* background-color:red; */
 	}
 
 	/* 大学之道部分 */
@@ -418,14 +425,14 @@
 
 /* 卡片式 */
 @media screen {
-	.section-header {
+	.section-header h2{
 		padding-top: 20px;
 		width: 100%;
 		text-align: center;
 		font-size: 30px;
 		color: orangered;
 	}
-
+	
 	.section-header p {
 		color: black;
 		font-size: .6em;
@@ -447,7 +454,7 @@
 
 	.card-left:hover,
 	.card-right:hover {
-		transform: scale(1.1);
+		transform: scale(1.005);
 		box-shadow: 0px 1px 10px #0000FF;
 
 	}
@@ -492,20 +499,47 @@
 	}
 
 	.min-card {
-		width: 23%;
-		height: 350px;
-		margin: 1% 0% 0 0;
+		position: relative;
+		float: left;
+		width: 30%;
+		height: 280px;
+		/* margin:  0 10%; */
+		background-color: #fff;
+		border: #eee solid 1px;
 
 	}
-
+	.min-card:hover{
+		transform: scale(1.02);
+		box-shadow: 0px 0px 5px red;
+		/* border: 1px solid #000; */
+		z-index: 2;
+	}
+	.min-card-left{
+		animation: anima1 2s;
+		margin: 0 0 0px 20%;
+	}
+.min-card-right{animation: anima2 2s;
+margin:0  20% 0px 0;
+}
 	.min-card .card-h2 {
 		font-size: 22px;
 		padding: 8px 0;
 	}
-
+#min-card-last{
+	/* animation: anima 5s; */
+	margin-bottom: 60px;
+}
+@keyframes anima1 {
+	0% { right:  800px;}
+	100%{right: 0;}
+}
+  @keyframes anima2 {
+	  0% { left: 800px;}
+	  100%{left: 0;}
+  }
 	.min-card p:nth-last-child(2) {
 		font-weight: 700;
-		font-size: 16px;
+		font-size: 12px;
 	}
 
 	.min-card p:last-child {
