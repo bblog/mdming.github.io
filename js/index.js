@@ -23,11 +23,11 @@ window.onload = function () {
 			document.querySelectorAll('.container-nav')[0].style.top = -50 + "px";
 			document.querySelectorAll('.container-nav')[1].style.top = -50 + "px";
 			
-			document.querySelector('.top').style.right = -39 + "px"
+			document.querySelector('.aside').style.right = -45 + "px"
 		} else {
 			document.querySelectorAll('.container-nav')[0].style.top = 0 + "px";
 			document.querySelectorAll('.container-nav')[1].style.top = 0 + "px";
-			document.querySelector('.top').style.right = 5 + "px"
+			document.querySelector('.aside').style.right = 5 + "px"
 		}console.log(scrollTop);
 		if (scrollTop< 150) {
 			// document.querySelector('.top').style.right = -39 + "px"
