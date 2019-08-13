@@ -12,7 +12,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="author" content="蒙大明" />
-	<meta http-equiv="Keywords" cotent="蒙大明,个人网站, 网站示例, 前端" />
+	<meta http-equiv="Keywords" content="蒙大明,个人网站, 网站示例, 前端" />
 	<meta name="keywords" content="蒙大明,个人网站, 网站示例, 前端">
 	<meta name="description" content="蒙大明的GH,
 		是蒙大明在Github上搭建的静态网页,用于练习">
@@ -24,60 +24,35 @@
 </head>
 
 <body>
-
-	<!-- 手机左边菜单展开栏-->
-	<div class="menu-nav">
-		<ul class="menu-nav-list">
-			<li><a href=""><i class="fas fa-home"></i>首页</a></li>
-			<li><a href=""><i class="far fa-paper-plane"></i> web前端</a></li>
-			<li><a href=""><i class="far fa-school"></i> 大学之道</a></li>
-			<li><a href=""><i class="fal fa-book-reader"></i> 作者与本站</a></li>
-		</ul>
-		<!-- <div class="menu-nav-footer"></div> -->
-	</div>
 	<!-- 头部 -->
 	<header class="col-10 ">
 		<!-- 手机导航栏 -->
-		<!-- 顶部 -->
-		<nav class="nav-m container-nav">
-			<!-- 按钮实现方法:三条线通过转换(旋转角度),第二条隐藏,加过渡效果更好看 -->
-			<div class="menu">
-				<div class="bar1"></div>
-				<div class="bar2"></div>
-				<div class="bar3"></div>
-			</div>
-			<a class="middle-logo" href="index.html"><span>DM</span></a>
-			<p class="switch-tips">切换<br />导航</p>
-			<label class="switch">
-				<input type="checkbox" checked />
-				<div class="slider"></div>
-			</label>
 
-		</nav>
 		<!-- 底部导航栏 -->
 		<nav class="nav-bottom">
 			<ul>
-				<li><a href=""><i class="fas fa-home"></i>首页</a></li>
-				<li><a href=""><i class="far fa-paper-plane"></i> web前端</a></li>
-				<li><a href=""><i class="far fa-school"></i> 大学之道</a></li>
-				<li><a href=""><i class="fal fa-book-reader"></i> 作者与本站</a></li>
+				<li><a id="site" href="#top"><i class="fas fa-home"></i>首页</a></li>
+				<li><a href="myweb.html"><i class="far fa-paper-plane"></i> web前端</a></li>
+				<li><a href="college.html"><i class="far fa-school"></i> 大学之道</a></li>
+				<li><a href="we.html"><i class="fal fa-book-reader"></i> 作者与本站</a></li>
 			</ul>
-
 		</nav>
 		<!-- PC导航栏 -->
-		<nav class="nav-big container-nav">
+		<nav class="container-nav">
 			<a href="index.html"><span class="logo">DM</span></a>
 			<ul class="nav-list">
 				<li><a id="home" href="">首页</a></li>
-				<li><a href="">web前端</a></li>
-				<li><a href="">大学之道</a></li>
-				<li><a href="">作者与本站</a></li>
+				<li><a href="myweb.html">web前端</a></li>
+				<li><a href="college.html">大学之道</a></li>
+				<li><a href="we.html">作者与本站</a></li>
 			</ul>
 			<div class="search" type="text" placeholder="搜索"></div>
 		</nav>
 	</header>
 	<!-- 内容主体区 -->
 	<main>
+		<br>
+		<br>
 		<!-- my web部分 -->
 		<div class="col-10 myweb">
 			<header class="section-header">
@@ -86,33 +61,40 @@
 			</header>
 			<section class="row">
 				<div class="min-card min-card-left">
-					<h2 class="card-h2">模仿网站</h2>
-					<img class="card-img" src="/img/demo.jpg" alt="图片加载中">
-					<p>有各种很酷的布局</p>
+					<a href="myweb.html#demo">
+						<h2 class="card-h2">网站形式</h2>
+						<img class="card-img" src="/img/demo.jpg" alt="图片加载中">
+						<p>有各种很酷的布局</p>
+					</a>
 					<!-- <p>我相信它一定能出乎你所料</p> -->
 				</div>
 				<div class="min-card min-card-right">
-					<h2 class="card-h2">小小组件</h2>
-					<img class="card-img" src="/img/zujian.jpg" alt="图片加载中" />
-					<p>制作的各种组件</p>
+					<a href="myweb.html#zj">
+						<h2 class="card-h2">小小组件</h2>
+						<img class="card-img" src="/img/zujian.jpg" alt="图片加载中" />
+						<p>制作的各种组件</p>
+					</a>
 					<!-- <p>点击它、拥有它</!-->
 				</div>
 			</section>
 			<section class="row">
 				<div class=" min-card min-card-left ">
-					<h2 class="card-h2">前端知识</h2>
-					<img class="card-img" src="/img/qianduan.jpg" alt="图片加载中" />
-					<p>前端的各种知识</p>
+					<a href="myweb.html#qd">
+						<h2 class="card-h2">前端知识</h2>
+						<img class="card-img" src="/img/qianduan.jpg" alt="图片加载中" />
+						<p>前端的各种知识</p>
+					</a>
 					<!-- <p>真的很小</p> -->
 				</div>
 				<div id="min-card-last" class=" min-card min-card-right">
-					<h2 class="card-h2">JS小游戏</h2>
-					<img class="card-img" src="/img/game.jpg" alt="图片加载中" />
-					<p>用JavaScript做的小游戏</p>
+					<a href="myweb.html#game">
+						<h2 class="card-h2">JS小游戏</h2>
+						<img class="card-img" src="/img/game.jpg" alt="图片加载中" />
+						<p>用JavaScript做的小游戏</p>
+					</a>
 					<!-- <p>易错、常识都有哦</p> -->
 				</div>
 			</section>
-
 		</div>
 		<!-- 大学部分 -->
 		<div class="col-10 college">
@@ -122,9 +104,9 @@
 			</header>
 			<section class="row">
 				<div class="card-left  card col-4">
-					<h2 class="card-h2">网站与知识</h2>
+					<h2 class="card-h2">资源与知识</h2>
 					<img class="card-img" src="/img/website.jpg" alt="图片加载中">
-					<p>有好多有用的网站</p>
+					<p>各种资源、网站、知识</p>
 					<p>希望她能让你一见如故</p>
 				</div>
 				<div class="card-right card  col-4">
@@ -176,7 +158,7 @@
 			<li class="col-5"><a><span>更新日期</span><span><i class="fal fa-clock"></i> 2019/8/1</span></a>
 			</li>
 		</ul>
-
+		<div class="div">这已经是我的底线了</div>
 	</footer>
 	<!-- 返回按钮及侧边栏 -->
 	<aside class="aside">
