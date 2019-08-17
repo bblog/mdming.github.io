@@ -19,3 +19,11 @@ window.onload = function () {
 		scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
 	}
 }
+var w=window.innerWidth ;
+var  h=document.body.clientWidth ;
+ var width= document.documentElement.clientWidth
+console.log(w)
+if(width<768){
+	document.querySelector('#qq').href="mqqwpa://im/chat?chat_type=wpa&uin=479858761&version=1&src_type=web&web_src=oicqzone.com"
+	
+}
