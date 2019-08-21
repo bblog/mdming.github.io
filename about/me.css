@@ -1,0 +1,517 @@
+/* 定义标签  默认样式 */
+
+
+@media screen {
+    html {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0px;
+        height: auto;
+    }
+
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        text-align: center
+    }
+
+
+
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+/* 遮盖层 */
+@media screen {
+    .cover {
+        width: 0;
+        overflow: hidden;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        background-color: rgba(18, 18, 18, 0.41);
+        transition: all 1s;
+    }
+
+    .content {
+        width: 300px;
+        height: 360px;
+        /* border-bottom: 1px solid #000;
+	border-radius: 10px; */
+
+    }
+
+    .c-title {
+        background-color: rgba(255, 255, 255, 0.238);
+        border-radius: 16px;
+
+        font-size: 26px;
+        color: red;
+    }
+
+    .content img {
+        /* border-bottom: 1px solid #000; */
+        border-radius: 16px;
+        width: 100%;
+        height: 90%;
+    }
+}
+
+/* 所有头部、导航栏 弹出菜单 */
+@media screen {
+
+    /* 导航栏容器 */
+    .container-nav {
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        height: 50px;
+        transition: all .8s;
+        /*过渡效果*/
+        overflow: hidden;
+        background-color: white;
+        font-weight: 600;
+        border-bottom-style: solid;
+        border-bottom-color: blue;
+        border-bottom-width: 0.09375rem;
+        box-shadow: 0px 1px 10px #0000FF;
+        margin: 0px;
+        z-index: 3;
+    }
+
+    /* PC导航栏 */
+    .logo {
+
+        padding: 0px 40px 0px 60px;
+        width: auto;
+        text-align: center;
+        font-size: 50px;
+        line-height: 50px;
+        font-family: "Lucida Console", Monaco, monospace;
+        color: blue;
+        float: left;
+        height: 50px;
+    }
+
+    .logo:active {
+        background-color: aqua;
+    }
+
+    .nav-list {
+        display: flex;
+        /*弹性布局*/
+        justify-content: center;
+        /*从中间开始布局*/
+        flex: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    #home {
+        color: blue;
+    }
+
+    #home:after {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    .nav-list li a {
+        position: relative;
+        /*重要：  只有这里相对定位了a：after的绝对才会绑定a元素*/
+        height: 100%;
+        display: inline-block;
+        font-size: 20px;
+        padding-top: 13px;
+        margin-right: 1.2em;
+        text-align: center;
+        color: black;
+    }
+
+    .nav-list li a:hover {
+        color: #0000FF
+    }
+
+    .nav-list li a:after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        /*绝对定位  脱离文本流*/
+        bottom: 0;
+        left: 0;
+        background-color: fuchsia;
+        visibility: hidden;
+        transform: scaleX(0);
+        /*转换  x轴方向为0%*/
+        transition: all .2s ease-in;
+        /*过渡效果*/
+    }
+
+    .nav-list li a:hover:after {
+        visibility: visible;
+        transform: scaleX(1);
+        /*转换  x轴方向为100%*/
+        transition: all 0.25s ease-out;
+    }
+
+
+    /* 手机导航栏 */
+
+    /* 手机底部导航栏 */
+    .nav-bottom {
+        display: none;
+        width: 100%;
+        background: white;
+        position: fixed;
+        /*脱离文本流定位*/
+        bottom: 0;
+        z-index: 1000;
+    }
+
+    .nav-bottom ul {
+        border-top: px solid #000;
+        box-shadow: 0px 1px 10px #0000FF;
+        padding: 0;
+        display: flex;
+        /* 父元素弹性布局 */
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .nav-bottom ul li {
+        flex: 1;
+        /*子代等距划分*/
+    }
+
+    #site {
+        background-color: aliceblue;
+    }
+
+    .nav-bottom ul li a i {
+        display: block;
+        padding: 5px;
+    }
+
+    .nav-bottom ul li a {
+        color: #000000;
+        display: block;
+        padding-bottom: 8px;
+    }
+
+    /* 菜单按钮弹出栏 */
+
+}
+
+/* 主要内容 */
+@media screen {
+
+    body {
+        background-color: rgba(33, 150, 243, 0.12);
+    }
+
+    main {
+        width: 80%;
+        background-color: white;
+        border: 1px solid orange;
+        border-top: 4px solid orangered;
+        box-shadow: #9E9E9E 1px 0px 10px;
+        margin: 100px auto;
+        height: 1000px;
+    }
+    .title {
+        position: relative;
+        width: 100%;
+        height: 120px;
+        padding: 0 10%;
+        margin-bottom: 100px;
+    }
+
+    .title h2 {
+        border-bottom: 1px solid #000;
+        bottom: 8px;
+        left: 60px;
+        font-size: 30px;
+        line-height: 120px;
+        color: orangered;
+    }
+    /* .title {
+        position: relative;
+        width: 100%;
+        height: 120px;
+        margin-bottom: 100px;
+    }
+
+    .title h2 {
+        z-index: 1;
+        position: absolute;
+        bottom: 8px;
+        left: 60px;
+        color: #FFEB3B;
+    }
+
+
+
+    .bg {
+        position: absolute;
+        bottom: 0;
+        left: -5px;
+        width: 250px;
+        height: 45px;
+        background-color: blue;
+    } */
+    .massage p{
+        width: 80%;
+        height: 80%;
+        margin:10px auto;
+        text-align: left;
+    }
+    .massage p span{
+        color: black;
+        font-weight: 800;
+    }
+    .meng {
+        text-indent: 2rem;
+        margin: 0 auto;
+
+    }
+}
+
+/* 底部栏 */
+@media screen {
+    .footer:before {
+        background: #000 linear-gradient(to left, #9871e2, #fc31d0, #28b3f7, blue, #2eaff6, #c851da, #fa32d1);
+        content: "";
+        height: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .footer {
+        position: relative;
+        margin-top: 3px;
+        width: 100%;
+        text-align: center;
+        background-color: #ffffff;
+        font-size: 26px;
+    }
+.footer:after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+    .footer-top {
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(249, 249, 249);
+        /* border-top: 6px solid royalblue; */
+        border-bottom: 1px solid gainsboro;
+    }
+
+    .footer-top span {
+        padding-right: 30px;
+    }
+
+    .footer-left {
+        padding-top: 40px;
+        width: 50%;
+        height: 200px;
+        float: left;
+        display: flex;
+        justify-content: center;
+        /* background-color: blue; */
+    }
+
+    #qq-f img {
+        width: 45px;
+        height: 35px;
+    }
+
+    #weixin-f img {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer-top a {
+
+        padding: 15px 1px 0 0;
+    }
+
+    .footer-right {
+        padding-top: 40px;
+        width: 50%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        float: left;
+    }
+
+    .footer-list {
+        height: 26px;
+    }
+
+    .footer-list a {
+        color: blue;
+        font-size: 16px;
+    }
+}
+
+/* 返回按钮及侧边栏 */
+@media screen {
+    .aside {
+        transition: all .5s;
+        opacity: 0.7;
+        position: fixed;
+        bottom: 66px;
+        right: -39px;
+        background-color: #FFDEAD;
+        border: solid 1px gainsboro;
+    }
+
+    .aside div:not(:last-child) {
+        border-bottom: 0.1px solid red;
+    }
+
+    .aside div {
+
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .aside div a {
+        color: blue;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+
+
+    .aside .top {
+
+        /* padding: 0px 4px; */
+        /* color: #0000FF; */
+        font-size: 40px;
+        /* line-height: 80%; */
+    }
+
+    .aside div a:hover {
+        background-color: orangered;
+        color: white;
+    }
+}
+
+/* 适应手机 */
+@media only screen and (max-width:768px) {
+    [class*="col-"] {
+        width: 100%;
+        margin: 0px;
+    }
+
+    .min-card {
+        width: 45%;
+        height: 200px;
+    }
+
+    .min-card-left {
+
+        margin-left: 5%
+    }
+
+    .min-card-right {
+
+        margin-right: 5%
+    }
+
+    .card {
+        height: 300px;
+        width: 86%;
+        margin: 5% 7%;
+    }
+
+    .card-img {
+        width: 90%;
+        height: 60%;
+    }
+
+    #min-card-two {
+        position: relative;
+        top: 0;
+        left: 0;
+
+    }
+
+
+
+    .card-h2 {
+        padding: 8px 0;
+    }
+
+
+    .sec-more {
+        padding: 10px 0 30px 0;
+    }
+
+    .section-header {
+        font-size: 16px;
+    }
+
+
+
+    .container-nav {
+        display: none;
+    }
+
+    .nav-bottom {
+        display: block;
+    }
+
+    .footer {
+        font-size: 20px;
+    }
+
+    .footer-left,
+    .footer-right {
+        padding: 20px 0;
+    }
+}
+
+/* 适应iPad */
+@media only screen and (min-width: 769px) and (max-width: 991px) {}
+
+/* PC端 */
+@media only screen and (min-width: 769px) {
+    .container-nav {
+        display: flex;
+    }
+
+    .nav-bottom {
+        display: none;
+    }
+
+}
