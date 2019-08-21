@@ -1,6 +1,7 @@
 /* 轮播图 */
 @media screen {
 	.index {
+
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -18,13 +19,11 @@
 		height: 75%;
 		background-color: white;
 		border: #dcdcdc99 2px solid;
-		;
 		box-shadow: gainsboro 1px 1px 16px;
 	}
 
 	.banner {
 		cursor: pointer;
-
 		box-shadow: grey 3px 3px 12px;
 		overflow: hidden;
 		position: relative;
@@ -637,10 +636,9 @@
 
 	.footer {
 		position: relative;
-		margin-top: 3px;
 		width: 100%;
 		text-align: center;
-		background-color: #ffffff;
+		background-color: white;
 		font-size: 26px;
 	}
 
@@ -660,6 +658,8 @@
 	}
 
 	.footer-left {
+		background-color: #ffffff;
+
 		padding-top: 40px;
 		width: 50%;
 		height: 200px;
@@ -686,6 +686,8 @@
 	}
 
 	.footer-right {
+		background-color: #ffffff;
+
 		padding-top: 40px;
 		width: 50%;
 		height: 200px;
@@ -868,5 +870,16 @@
 	.nav-bottom {
 		display: none;
 	}
-
+	.index{
+		
+		z-index: -1;
+	}
+.container{
+	position: fixed;
+}
+main{
+	position: relative;
+	z-index: 100;
+	background-color: #fff;
+}
 }
