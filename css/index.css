@@ -1,5 +1,154 @@
-/* 定义标签  默认样式 */
+/* 轮播图 */
+@media screen {
+	.index {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		background-color: white;
+	}
 
+	.container {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		float: left;
+		width: 90%;
+		height: 75%;
+		background-color: white;
+		border: #dcdcdc99 2px solid;
+		;
+		box-shadow: gainsboro 1px 1px 16px;
+	}
+
+	.banner {
+		cursor: pointer;
+
+		box-shadow: grey 3px 3px 12px;
+		overflow: hidden;
+		position: relative;
+		width: 90%;
+		height: 90%;
+		background-color: olivedrab;
+	}
+
+	.banner-list {
+		transition: all 1s;
+		height: 100%;
+
+	}
+
+	.items {
+		position: relative;
+		font-size: 80px;
+		float: left;
+		height: 100%;
+	}
+
+	.items img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.items span {
+		position: absolute;
+		left: 0;
+		z-index: 10;
+		font-size: 80px;
+		color: red;
+
+	}
+
+	.point {
+		position: absolute;
+		bottom: 5px;
+	}
+
+	.point-items {
+		cursor: pointer;
+		float: left;
+		margin: 0 3px;
+		width: 42px;
+		height: 15px;
+		border-bottom: solid 8px #2196f3;
+		background-color: #2196f300;
+
+
+	}
+	.active {
+		border-bottom-color: orangered;
+
+	}
+
+
+	@keyframes bar {
+		0% {
+			transform: translateX(8px)
+		}
+
+		100% {
+			transform: translateX(-8px)
+		}
+	}
+
+	.pre {
+		animation: bar 1.5s infinite alternate;
+		/* infinite  无限循环  alternate 反向进行一次  */
+		cursor: pointer;
+		color: #9e9e9e69;
+		font-size: 50px;
+		position: absolute;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 90%;
+		width: 5%;
+	}
+
+	.next {
+		animation: bar 1.5s infinite alternate;
+
+		cursor: pointer;
+		color: #9e9e9e69;
+
+		font-size: 50px;
+		position: absolute;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 90%;
+		width: 5%;
+	}
+
+	@keyframes width {
+		0% {
+			width: 0%;
+		}
+
+		100% {
+			width: 100%;
+		}
+	}
+
+	#go {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 4px;
+		background-color: red;
+	}
+
+	.go-bar {
+		animation: width 5s infinite;
+
+	}
+
+
+
+}
 
 @media screen {
 	html {
@@ -9,8 +158,10 @@
 	}
 
 	body {
+		overflow-x: hidden;
 		width: 100%;
 		margin: 0px;
+		height: auto;
 	}
 
 	* {
@@ -81,6 +232,46 @@
 
 	[class*="col-"] {
 		float: left;
+	}
+}
+
+/* 遮盖层 */
+@media screen {
+	.cover {
+		width: 0;
+		overflow: hidden;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 1000;
+		background-color: rgba(18, 18, 18, 0.41);
+		transition: all 1s;
+	}
+
+	.content {
+		width: 300px;
+		height: 360px;
+		/* border-bottom: 1px solid #000;
+	border-radius: 10px; */
+
+	}
+
+	.c-title {
+		background-color: rgba(255, 255, 255, 0.238);
+		border-radius: 16px;
+
+		font-size: 26px;
+		color: red;
+	}
+
+	.content img {
+		/* border-bottom: 1px solid #000; */
+		border-radius: 16px;
+		width: 100%;
+		height: 90%;
 	}
 }
 
@@ -193,11 +384,11 @@
 		position: fixed;
 		/*脱离文本流定位*/
 		bottom: 0;
-		z-index: 1;
+		z-index: 1000;
 	}
 
 	.nav-bottom ul {
-		border-top: px solid #000;
+		border-top: 1px solid #000;
 		box-shadow: 0px 1px 10px #0000FF;
 		padding: 0;
 		display: flex;
@@ -242,7 +433,8 @@
 
 	/* 大学之道部分 */
 	.college {
-		background-color: gold;
+		background-color: rgba(222, 222, 225, 0.37);
+
 	}
 
 	/* TOD关于本站部分 */
@@ -320,6 +512,7 @@
 		font-weight: 550;
 		font-size: 22px;
 		margin: 5px 0;
+		color: #000;
 	}
 
 	.card-left p:last-child,
@@ -432,57 +625,83 @@
 
 /* 底部栏 */
 @media screen {
-	.footer {
+	.footer:before {
+		background: #000 linear-gradient(to left, #9871e2, #fc31d0, #28b3f7, blue, #2eaff6, #c851da, #fa32d1);
+		content: "";
+		height: 4px;
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
-		float: left;
+	}
+
+	.footer {
+		position: relative;
+		margin-top: 3px;
+		width: 100%;
 		text-align: center;
-		background-color: skyblue;
-
+		background-color: #ffffff;
+		font-size: 26px;
 	}
 
-	.div {
-		display: none;
+	.footer-top {
+		height: 70px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: rgb(249, 249, 249);
+		/* border-top: 6px solid royalblue; */
+		border-bottom: 1px solid gainsboro;
 	}
 
-	.footer ul {
-		margin: 0;
+	.footer-top span {
+		padding-right: 30px;
 	}
 
-
-
-	.shield {
-		display: inline-block;
-		border-radius: 3px;
-		font-size: 25px;
-		color: white;
-		padding: 6px 10px;
+	.footer-left {
+		padding-top: 40px;
+		width: 50%;
+		height: 200px;
+		float: left;
+		display: flex;
+		justify-content: center;
+		/* background-color: blue; */
 	}
 
-	.shield li {
-		padding: 10px 30px;
-		display: inline-block;
+	#qq-f img {
+		width: 45px;
+		height: 35px;
 	}
 
-	.shield li a {
+	#weixin-f img {
+		cursor: pointer;
+		width: 35px;
+		height: 35px;
+	}
+
+	.footer-top a {
+
+		padding: 15px 1px 0 0;
+	}
+
+	.footer-right {
+		padding-top: 40px;
+		width: 50%;
+		height: 200px;
+		display: flex;
+		justify-content: center;
 		float: left;
 	}
 
-	.shield li a span:first-child {
-		display: inline-block;
-		background-color: #3D3D3D;
-		padding: 6px 10px;
-		border-radius: 3px 0 0 3px;
+	.footer-list {
+		height: 26px;
 	}
 
-
-	.shield li a span:last-child {
-		background-color: orangered;
-		display: inline-block;
-		padding: 6px 10px;
-		border-radius: 0 3px 3px 0;
+	.footer-list a {
+		color: blue;
+		font-size: 16px;
 	}
-
-
 }
 
 /* 返回按钮及侧边栏 */
@@ -516,9 +735,7 @@
 		width: 100%;
 	}
 
-	#qq {
-		color: white;
-	}
+
 
 	.aside .top {
 
@@ -539,6 +756,36 @@
 	[class*="col-"] {
 		width: 100%;
 		margin: 0px;
+	}
+
+	.point {
+		bottom: 8px;
+
+	}
+
+	.point-items {
+		border-bottom: 5px solid rgb(79, 211, 198);
+		height: 10px;
+	}
+	.active {
+		border-bottom-color: #0000FF;
+
+	}
+	.pre,
+	.next {
+		display: none;
+	}
+
+	.banner,
+	.container,
+	.index {
+		border: 0;
+		height: 100%;
+		width: 100%;
+	}
+
+	#go {
+		top: 352px;
 	}
 
 	.min-card {
@@ -574,14 +821,7 @@
 
 	}
 
-	.shield {
-		font-size: 10px
-	}
 
-	.shield li {
-		padding: 3px 5px;
-		width: 50%;
-	}
 
 	.card-h2 {
 		padding: 8px 0;
@@ -598,18 +838,21 @@
 
 
 
-	.div {
-		display: block;
-		line-height: 60px;
-		height: 60px;
-	}
-
 	.container-nav {
 		display: none;
 	}
 
 	.nav-bottom {
 		display: block;
+	}
+
+	.footer {
+		font-size: 20px;
+	}
+
+	.footer-left,
+	.footer-right {
+		padding: 20px 0;
 	}
 }
 

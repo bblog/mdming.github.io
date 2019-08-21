@@ -16,6 +16,13 @@
 </head>
 
 <body>
+	<!-- 遮盖层 -->
+	<div class="cover">
+		<div class="content">
+			<img src="img/weixin-c.png" alt="图片加载中">
+			<div class="c-title">扫码添加微信</div>
+		</div>
+	</div>
 	<!-- 头部 -->
 	<header class="col-10 ">
 		<!-- 底部导航栏 -->
@@ -24,7 +31,7 @@
 				<li><a href="index.html"><i class="fas fa-home"></i>首页</a></li>
 				<li><a id="site" href="myweb.html"><i class="far fa-paper-plane"></i> web前端</a></li>
 				<li><a href="college.html"><i class="far fa-school"></i> 大学之道</a></li>
-				<li><a href="we.html"><i class="fal fa-book-reader"></i> 作者与本站</a></li>
+				<li><a href="we.html"><i class="fal fa-book-reader"></i> 我的空间</a></li>
 			</ul>
 		</nav>
 		<!-- PC导航栏 -->
@@ -34,9 +41,8 @@
 				<li><a href="index.html">首页</a></li>
 				<li><a id="home" href="myweb.html">web前端</a></li>
 				<li><a href="college.html">大学之道</a></li>
-				<li><a href="we.html">作者与本站</a></li>
+				<li><a href="we.html">我的空间</a></li>
 			</ul>
-			<div class="search" type="text" placeholder="搜索"></div>
 		</nav>
 	</header>
 	<!-- 内容主体区 -->
@@ -70,8 +76,10 @@
 					<h2>网站形式</h2>
 				</div>
 				<div class="myweb-card">
+						<a href="/myweb/demo/mydemo.html">
 					<img class="card-img" src="/img/nav.PNG" alt="图片加载中" />
 					<h2>可变导航栏</h2>
+					</a>
 				</div>
 				<div class="myweb-card">
 					<img class="card-img" src="/img/douyin.jpg" alt="图片加载中" />
@@ -105,8 +113,10 @@
 					<h2>组件</h2>
 				</div>
 				<div class="myweb-card">
-					<img class="card-img" src="/img/pingji.PNG" alt="图片加载中" />
-					<h2>实现评级效果</h2>
+					<a href="/myweb/component.html">
+						<img class="card-img" src="/img/pingji.PNG" alt="图片加载中" />
+						<h2>实现评级效果</h2>
+						</a>
 				</div>
 				<div class="myweb-card">
 					<img class="card-img" src="" alt="图片加载中" />
@@ -198,6 +208,7 @@
 					<img class="card-img" src="" alt="图片加载中" />
 					<h2>请期待</h2>
 				</div>
+
 				<div class="myweb-card">
 					<img class="card-img" src="" alt="图片加载中" />
 					<h2>加载更多</h2>
@@ -207,19 +218,26 @@
 	</main>
 	<!-- 底部栏 -->
 	<footer class="footer">
-		<ul class="shield">
-			<li class="col-5"><a><span>开发者</span><span><i class="far fa-address-card"></i> 蒙大明</span></a>
-			</li>
-			<li class="col-5"><a target="_blank"
-					href="http://wpa.qq.com/msgrd?v=3&uin=790430354&site=qq&menu=yes"><span>联系方式</span><span><i
-							class="fab fa-qq"></i> 790430354</span></a>
-			</li>
-			<li class="col-5"><a><span>版本</span><span><i class="far fa-copyright"></i> v1.0.0</span></a>
-			</li>
-			<li class="col-5"><a><span>更新日期</span><span><i class="fal fa-clock"></i> 2019/8/1</span></a>
-			</li>
-		</ul>
-		<div class="div">这已经是我的底线了</div>
+		<div class="footer-top"><span>联系作者</span><a id="qq-f" target="_blank"
+				href="http://wpa.qq.com/msgrd?v=3&uin=790430354&site=qq&menu=yes"><img src="/img/qq.jpg" alt=""></a>
+			<a id="weixin-f"><img src="/img/weixin.jpg" alt=""></a>
+		</div>
+		<div class="footer-left">
+			<ul>
+				<li>关于作者</li>
+				<li class="footer-list"><a href="/about/me.html">作者简介</a></li>
+				<li class="footer-list"><a href="index.html">网站首页</a></li>
+				<li class="footer-list"><a href="/we/plan.html">作者的自律之路</a></li>
+			</ul>
+		</div>
+		<div class="footer-right">
+			<ul>
+				<li>关于本站</li>
+				<li class="footer-list"><a href="about/website.html">开发过程</a></li>
+				<li class="footer-list"><a href="about/website.html#version">版本信息</a></li>
+				<li class="footer-list"><a href="about/website.html#used">本站借鉴</a></li>
+			</ul>
+		</div>
 	</footer>
 	<!-- 返回按钮及侧边栏 -->
 	<aside class="aside">

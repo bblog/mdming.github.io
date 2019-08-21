@@ -1,17 +1,19 @@
-// 顶导航栏及置顶键的响应
-window.onload = function () {
-	var scrollTop = 0;
-	document.onscroll = function () {
-		if (scrollTop < (document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop)) { //判断页面滚动的方向
-			document.querySelector('.container-nav').style.top = -50 + "px";
-			document.querySelector('.aside').style.right = -45 + "px";
-		} else {
-			document.querySelector('.container-nav').style.top = 0 + "px";
-			document.querySelector('.aside').style.right = 5 + "px";
-		}
-		if (scrollTop < 150) {
-			document.querySelector('.aside').style.right = -45 + "px";
-		}
-		scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-	}
+var height = document.documentElement.clientHeight;
+if (document.documentElement.clientHeight != height) {
+	document.querySelector('.main').style.height = height + "px";
 }
+document.querySelector('main').addEventListener("click", (function (e) {
+	var x = e.target.className;
+	if (x == "t") {
+		window.location.href = "we/book.html"
+	} else if (x == "b") {
+		window.location.href = "we/plan.html"
+	} 
+}))
+
+document.querySelector('.img-left').addEventListener("click", (function (e) {
+	window.location.href = "we/book.html"
+}))
+document.querySelector('.img-right').addEventListener("click", (function (e) {
+	window.location.href = "we/plan.html"
+}))

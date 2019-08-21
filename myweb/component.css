@@ -1,0 +1,682 @@
+@media screen {
+    html {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+    body {
+        width: 100%;
+        margin: 0px;
+    }
+
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+        text-align: center
+    }
+
+    main {
+        padding-top: 50px;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+/* 遮盖层 */
+@media screen {
+    .cover {
+        width: 0;
+        overflow: hidden;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        background-color: rgba(18, 18, 18, 0.41);
+        transition: all 1s;
+    }
+
+    .content {
+        width: 300px;
+        height: 360px;
+        /* border-bottom: 1px solid #000;
+	border-radius: 10px; */
+
+    }
+
+    .c-title {
+        background-color: rgba(255, 255, 255, 0.238);
+        border-radius: 16px;
+
+        font-size: 26px;
+        color: red;
+    }
+
+    .content img {
+        /* border-bottom: 1px solid #000; */
+        border-radius: 16px;
+        width: 100%;
+        height: 90%;
+    }
+}
+
+/* 底部栏 */
+@media screen {
+    .footer:before {
+        background: #000 linear-gradient(to left, #9871e2, #fc31d0, #28b3f7, blue, #2eaff6, #c851da, #fa32d1);
+        content: "";
+        height: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .footer {
+        position: relative;
+        margin-top: 3px;
+        width: 100%;
+        text-align: center;
+        background-color: #ffffff;
+        font-size: 26px;
+    }
+.footer:after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+    .footer-top {
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(249, 249, 249);
+        /* border-top: 6px solid royalblue; */
+        border-bottom: 1px solid gainsboro;
+    }
+
+    .footer-top span {
+        padding-right: 30px;
+    }
+
+    .footer-left {
+        padding-top: 40px;
+        width: 50%;
+        height: 200px;
+        float: left;
+        display: flex;
+        justify-content: center;
+        /* background-color: blue; */
+    }
+
+    #qq-f img {
+        width: 45px;
+        height: 35px;
+    }
+
+    #weixin-f img {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+    }
+
+    .footer-top a {
+
+        padding: 15px 1px 0 0;
+    }
+
+    .footer-right {
+        padding-top: 40px;
+        width: 50%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        float: left;
+    }
+
+    .footer-list {
+        height: 26px;
+    }
+
+    .footer-list a {
+        color: blue;
+        font-size: 16px;
+    }
+}
+
+
+@media screen {
+
+    /* 导航栏容器 */
+    .container-nav {
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        height: 50px;
+        transition: all .8s;
+        /*过渡效果*/
+        overflow: hidden;
+        background-color: white;
+        font-weight: 600;
+        border-bottom-style: solid;
+        border-bottom-color: blue;
+        border-bottom-width: 0.09375rem;
+        box-shadow: 0px 1px 10px #0000FF;
+        margin: 0px;
+        z-index: 3;
+    }
+
+    /* PC导航栏 */
+    .logo {
+
+        padding: 0px 40px 0px 60px;
+        width: auto;
+        text-align: center;
+        font-size: 50px;
+        line-height: 50px;
+        font-family: "Lucida Console", Monaco, monospace;
+        color: blue;
+        float: left;
+        height: 50px;
+    }
+
+    .logo:active {
+        background-color: aqua;
+    }
+
+    .nav-list {
+        display: flex;
+        /*弹性布局*/
+        justify-content: center;
+        /*从中间开始布局*/
+        flex: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    #home {
+        color: blue;
+    }
+
+    #home:after {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+
+    .nav-list li a {
+        position: relative;
+        /*重要：  只有这里相对定位了a：after的绝对才会绑定a元素*/
+        height: 100%;
+        display: inline-block;
+        font-size: 20px;
+        padding-top: 13px;
+        margin-right: 1.2em;
+        text-align: center;
+        color: black;
+    }
+
+    .nav-list li a:hover {
+        color: #0000FF
+    }
+
+    .nav-list li a:after {
+        content: "";
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        /*绝对定位  脱离文本流*/
+        bottom: 0;
+        left: 0;
+        background-color: fuchsia;
+        visibility: hidden;
+        transform: scaleX(0);
+        /*转换  x轴方向为0%*/
+        transition: all .2s ease-in;
+        /*过渡效果*/
+    }
+
+    .nav-list li a:hover:after {
+        visibility: visible;
+        transform: scaleX(1);
+        /*转换  x轴方向为100%*/
+        transition: all 0.25s ease-out;
+    }
+
+    .nav-list-site {
+        border-bottom: blue solid 6px;
+        color: blue;
+        background-color: gainsboro;
+    }
+
+    /* 手机导航栏 */
+    .menu {
+        padding: 6px 35px 0px 20px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: blue;
+        margin: 6px 0;
+        transition: 0.3s;
+    }
+
+    .change .bar1 {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+        /*透明度为0*/
+    }
+
+    .change .bar3 {
+        transform: rotate(45deg) translate(-8px, -8px);
+        /*转换角度*/
+    }
+
+    /* 中间logo */
+    .middle-logo {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        text-align: center;
+        text-shadow: 5px 5px 5px orangered;
+        font-size: 40px;
+        line-height: 50px;
+        font-family: "Lucida Console", Monaco, monospace;
+        color: blue;
+
+    }
+
+    /* 右侧搜索栏 */
+    .search {
+        border: solid gray 1px;
+        border-radius: 3px;
+        float: right;
+        margin: 10px 15px;
+        font-size: 10px;
+        width: 60px;
+    }
+
+    .search:hover {
+        border: solid blue 1.5px;
+    }
+
+    /* 右侧切换按钮 */
+    .switch-tips {
+        padding: 10px 0;
+        font-size: 3px;
+    }
+
+    .switch {
+        position: relative;
+        top: 10px;
+        right: 0px;
+        display: inline-block;
+        width: 50px;
+        height: 28px;
+    }
+
+    .switch input {
+        display: none;
+    }
+
+    .slider {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgb(40, 207, 62);
+        transition: .4s;
+        border-radius: 34px;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: -2px;
+        bottom: 4px;
+        border-radius: 50%;
+        background-color: white;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        /*通过表单的值切换颜色*/
+        background-color: #2196F3;
+    }
+
+    input:checked+.slider:before {
+        /*通过表单的值进行转换效果中的位移效果*/
+        transform: translateX(26px);
+    }
+
+    /* 手机底部导航栏 */
+    .nav-bottom {
+        display: none;
+        width: 100%;
+        background: white;
+        position: fixed;
+        /*脱离文本流定位*/
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .nav-bottom ul {
+        border-top: px solid #000;
+        box-shadow: 0px 1px 10px #0000FF;
+        padding: 0;
+        display: flex;
+        /* 父元素弹性布局 */
+        margin: 0;
+        list-style-type: none;
+    }
+
+    .nav-bottom ul li {
+        flex: 1;
+        /*子代等距划分*/
+    }
+
+    #site {
+        background-color: aliceblue;
+    }
+
+    .nav-bottom ul li a i {
+        display: block;
+        padding: 5px;
+    }
+
+    .nav-bottom ul li a {
+        color: #000000;
+        display: block;
+        padding-bottom: 8px;
+    }
+
+    /* 菜单按钮弹出栏 */
+    .menu-nav {
+        font-size: 30px;
+        z-index: 10;
+        position: fixed;
+        top: 50px;
+        left: 0px;
+        height: 0px;
+        width: 0px;
+        overflow: hidden;
+        transition: 0.2s;
+    }
+
+    .menu-nav-list {
+
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu-nav-list li a {
+        padding: 15px 15px 15px 50px;
+        border-top: solid 0.1px orangered;
+        display: block;
+        color: navy;
+        text-align: left;
+    }
+
+    .menu-nav-list li a i {
+        padding: 15px;
+    }
+
+    .menu-nav-list li a:hover {
+        background-color: orangered;
+    }
+
+    .menu-nav-list li:last-child {
+        border-bottom: solid 0.1px orangered;
+    }
+
+    .menu-nav-footer {
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu-content {
+        color: #0000FF;
+        background-color: aliceblue;
+    }
+}
+
+/* 主内容区 */
+@media screen {
+    .main-header {
+        padding: 30px 0;
+        font-size: 35px;
+        color: rgb(49, 24, 190);
+    }
+
+    /* 评级 */
+    .pingji {
+        padding: 20px 20%;
+        background-color: white;
+    }
+
+    table {
+       
+        border-collapse: collapse;
+    }
+/* .table{
+     margin: 20px 20%;
+} */
+    table,
+    td,
+    th {
+        height: 80px;
+        border: 1px solid #000;
+    }
+
+    .fa-star,
+    .fa-star-o {
+        color: gold;
+    }
+
+    .xh-rater {
+        unicode-bidi: bidi-override;
+        direction: rtl;
+        float: left;
+    }
+
+    li:hover {
+        cursor: pointer
+    }
+
+    li.fa-star-o:hover:before,
+    .fa-star-o:hover~.fa-star-o:before {
+        content: "\f005";
+        color: gold;
+    }
+}
+
+/*  */
+@media screen {
+
+    .footer {
+        width: 100%;
+        float: left;
+        text-align: center;
+        background-color: skyblue;
+
+    }
+
+    .div {
+        display: none;
+    }
+
+    .footer ul {
+        margin: 0;
+    }
+
+
+
+    .shield {
+        display: inline-block;
+        border-radius: 3px;
+        font-size: 25px;
+        color: white;
+        padding: 6px 10px;
+    }
+
+    .shield li {
+        padding: 10px 30px;
+        display: inline-block;
+    }
+
+    .shield li a {
+        float: left;
+    }
+
+    .shield li a span:first-child {
+        display: inline-block;
+        background-color: #3D3D3D;
+        padding: 6px 10px;
+        border-radius: 3px 0 0 3px;
+    }
+
+
+    .shield li a span:last-child {
+        background-color: orangered;
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 0 3px 3px 0;
+    }
+
+
+
+
+}
+
+/* 返回按钮及侧边栏 */
+@media screen {
+    .aside {
+        transition: all .5s;
+        opacity: 0.7;
+        position: fixed;
+        bottom: 66px;
+        right: -39px;
+        background-color: #FFDEAD;
+        border: solid 1px gainsboro;
+    }
+
+    .aside div:not(:last-child) {
+        border-bottom: 0.1px solid red;
+    }
+
+    .aside div {
+
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .aside div a {
+        color: blue;
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+
+   .shield li a{
+        color: white;
+    }
+
+    .aside .top {
+
+        /* padding: 0px 4px; */
+        /* color: #0000FF; */
+        font-size: 40px;
+        /* line-height: 80%; */
+    }
+
+    .aside div a:hover {
+        background-color: orangered;
+        color: white;
+    }
+}
+
+main {
+    width: 100%;
+    height: 1000px;
+}
+
+/* 适应手机 */
+@media only screen and (max-width:768px) {
+    [class*="col-"] {
+        width: 100%;
+        margin: 0px;
+    }
+
+
+    .shield {
+        font-size: 10px
+    }
+
+    .shield li {
+        padding: 3px 5px;
+        width: 50%;
+    }
+
+
+    .nav-big {
+        display: none;
+    }
+
+
+    .nav-m {
+        display: flex;
+    }
+
+    .div {
+        display: block;
+        line-height: 60px;
+        height: 60px;
+    }
+    .pingji{
+        padding: 20px 5%;
+    }
+}
+
+/* 适应iPad */
+@media only screen and (min-width: 769px) and (max-width: 991px) {}
+
+/* PC端 */
+@media only screen and (min-width: 769px) {
+    .nav-big {
+        display: flex;
+    }
+
+    .nav-bottom {
+        visibility: hidden;
+    }
+
+    .nav-m {
+        display: none;
+    }
+}

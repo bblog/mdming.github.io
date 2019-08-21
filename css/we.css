@@ -1,375 +1,129 @@
-/* 定义标签  默认样式 */
+/* pc端页面 */
+@media only screen and (min-width: 769px) {
 
-
-@media screen {
-    html {
-        margin: 0px;
-        padding: 0px;
+    html,
+    body,
+    main,
+    .pc {
         width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
     }
 
-    body {
-        width: 100%;
-        margin: 0px;
+    .img-left {
+        z-index: 1;
+        float: left;
+        position: relative;
+        cursor: pointer;
+        width: 50%;
+        height: 100%;
     }
 
-    * {
-        padding: 0px;
-        margin: 0px;
-        box-sizing: border-box;
-        text-align: center
+    .img-right {
+        cursor: pointer;
+        position: relative;
+        float: left;
+        width: 50%;
+        height: 100%;
+
+    }
+
+    .img-left img {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 60%;
+        height: 60%;
+    }
+
+    .img-right img {
+        position: absolute;
+        bottom: 5%;
+        right: 0;
+        width: 60%;
+        height: 60%;
+    }
+
+    .title-left {
+        font-size: 28px;
+        position: absolute;
+        bottom: 30%;
+        left: 20%;
+        color: blue;
+    }
+
+    .title-right {
+        font-size: 28px;
+        position: absolute;
+        top: 20%;
+        right: 40%;
+        color: blue;
+    }
+
+    .line {
+        height: 100%;
+        width: 43%;
+        position: absolute;
+        transform: rotate(6deg);
+        top: 30px;
+        left: 25%;
+    }
+
+    .t,
+    .b {
+        display: none;
+    }
+}
+
+/* 手机页面 */
+@media only screen and (max-width:768px) {
+
+    html,
+    body,
+    main {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        overflow: hidden;
+    }
+
+    .pc {
+        display: none;
+    }
+
+    .b,
+    .t {
+        width: 100%;
+        height: 50%;
     }
 
     main {
-        height: 2000px;
-    }
-
-    ul {
-        list-style-type: none;
-    }
-
-    a {
-        text-decoration: none;
-    }
-}
-
-@media screen {
-    .col-1 {
-        width: 10%;
-    }
-
-    .col-2 {
-        width: 20%;
-    }
-
-    .col-3 {
-        width: 30%;
-    }
-
-    .col-4 {
-        width: 40%;
-    }
-
-    .col-5 {
-        width: 50%;
-    }
-
-    .col-6 {
-        width: 60%;
-    }
-
-    .col-7 {
-        width: 70%;
-    }
-
-    .col-8 {
-        width: 80%;
-    }
-
-    .col-9 {
-        width: 90%;
-    }
-
-    .col-10 {
+        cursor: pointer;
+        height: 100%;
         width: 100%;
-    }
-
-    /* 列后清除浮动相当于画一条线与下面的间开 */
-    .row:after {
-        content: "";
-        clear: both;
-        display: block;
-    }
-
-    [class*="col-"] {
-        float: left;
-    }
-}
-
-/* 所有头部、导航栏 弹出菜单 */
-@media screen {
-
-    /* 导航栏容器 */
-    .container-nav {
-        width: 100%;
-        position: fixed;
-        top: 0px;
-        height: 50px;
-        transition: all .8s;
-        /*过渡效果*/
-        overflow: hidden;
-        background-color: white;
-        font-weight: 600;
-        border-bottom-style: solid;
-        border-bottom-color: blue;
-        border-bottom-width: 0.09375rem;
-        box-shadow: 0px 1px 10px #0000FF;
-        margin: 0px;
-        z-index: 3;
-    }
-
-    /* PC导航栏 */
-    .logo {
-
-        padding: 0px 40px 0px 60px;
-        width: auto;
-        text-align: center;
-        font-size: 50px;
-        line-height: 50px;
-        font-family: "Lucida Console", Monaco, monospace;
-        color: blue;
-        float: left;
-        height: 50px;
-    }
-
-    .logo:active {
-        background-color: aqua;
-    }
-
-    .nav-list {
-        display: flex;
-        /*弹性布局*/
-        justify-content: center;
-        /*从中间开始布局*/
-        flex: 1;
-        margin: 0;
-        padding: 0;
-    }
-
-    #home {
-        color: blue;
-    }
-
-    #home:after {
-        visibility: visible;
-        transform: scaleX(1);
-    }
-
-    .nav-list li a {
+        background: url(/img/m_we.jpg) no-repeat;
+        background-size: 100% 100%;
         position: relative;
-        /*重要：  只有这里相对定位了a：after的绝对才会绑定a元素*/
-        height: 100%;
-        display: inline-block;
-        font-size: 20px;
-        padding-top: 13px;
-        margin-right: 1.2em;
-        text-align: center;
-        color: black;
     }
 
-    .nav-list li a:hover {
-        color: #0000FF
-    }
-
-    .nav-list li a:after {
-        content: "";
-        width: 100%;
-        height: 4px;
+    .top {
         position: absolute;
-        /*绝对定位  脱离文本流*/
-        bottom: 0;
-        left: 0;
-        background-color: fuchsia;
-        visibility: hidden;
-        transform: scaleX(0);
-        /*转换  x轴方向为0%*/
-        transition: all .2s ease-in;
-        /*过渡效果*/
+        color: red;
+        font-size: 26px;
+        top: 15%;
+        left: 24%;
     }
 
-    .nav-list li a:hover:after {
-        visibility: visible;
-        transform: scaleX(1);
-        /*转换  x轴方向为100%*/
-        transition: all 0.25s ease-out;
+    .bottom {
+        position: absolute;
+        color: orangered;
+        font-size: 26px;
+        bottom: 15%;
+        left: 39%;
     }
-
-    /* 手机底部导航栏 */
-    .nav-bottom {
-        display: none;
-        width: 100%;
-        background: white;
-        position: fixed;
-        /*脱离文本流定位*/
-        bottom: 0;
-        z-index: 1;
-    }
-
-    .nav-bottom ul {
-        border-top: px solid #000;
-        box-shadow: 0px 1px 10px #0000FF;
-        padding: 0;
-        display: flex;
-        /* 父元素弹性布局 */
-        margin: 0;
-        list-style-type: none;
-    }
-
-    .nav-bottom ul li {
-        flex: 1;
-        /*子代等距划分*/
-    }
-
-    #site {
-        background-color: aliceblue;
-    }
-
-    .nav-bottom ul li a i {
-        display: block;
-        padding: 5px;
-    }
-
-    .nav-bottom ul li a {
-        color: #000000;
-        display: block;
-        padding-bottom: 8px;
-    }
-}
-
-/* 底部栏 */
-@media screen {
-    .footer {
-        width: 100%;
-        float: left;
-        text-align: center;
-        background-color: skyblue;
-
-    }
-
-    .footer ul {
-        margin: 0;
-    }
-
-    .shield {
-        display: inline-block;
-        border-radius: 3px;
-        font-size: 25px;
-        color: white;
-        padding: 6px 10px;
-    }
-
-    .shield li {
-        padding: 10px 30px;
-        display: inline-block;
-    }
-
-    .shield li a {
-        float: left;
-    }
-
-    .shield li a span:first-child {
-        display: inline-block;
-        background-color: #3D3D3D;
-        padding: 6px 10px;
-        border-radius: 3px 0 0 3px;
-    }
-
-    .shield li a span:last-child {
-        background-color: orangered;
-        display: inline-block;
-        padding: 6px 10px;
-        border-radius: 0 3px 3px 0;
-    }
-}
-
-/* 返回按钮及侧边栏 */
-@media screen {
-    .aside {
-        transition: all .5s;
-        opacity: 0.7;
-        position: fixed;
-        bottom: 66px;
-        right: -39px;
-        background-color: #FFDEAD;
-        border: solid 1px gainsboro;
-    }
-
-    .aside div:not(:last-child) {
-        border-bottom: 0.1px solid red;
-    }
-
-    .aside div {
-
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-        line-height: 40px;
-    }
-
-    .aside div a {
-        color: blue;
-        display: block;
-        height: 100%;
-        width: 100%;
-    }
-
-    #qq {
-        color: white;
-    }
-
-    .aside .top {
-
-        /* padding: 0px 4px; */
-        /* color: #0000FF; */
-        font-size: 40px;
-        /* line-height: 80%; */
-    }
-
-    .aside div a:hover {
-        background-color: orangered;
-        color: white;
-    }
-}
-
-/* 适应手机 */
-@media only screen and (max-width:768px) {
-    [class*="col-"] {
-        width: 100%;
-        margin: 0px;
-    }
-
-
-
-
-    .shield {
-        font-size: 10px
-    }
-
-    .shield li {
-        padding: 3px 5px;
-        width: 50%;
-    }
-
-    .div {
-        display: block;
-        line-height: 60px;
-        height: 60px;
-    }
-
-    .container-nav {
-        display: none;
-    }
-
-    .nav-bottom {
-        display: block;
-    }
-}
-
-/* 适应iPad */
-@media only screen and (min-width: 769px) and (max-width: 991px) {}
-
-/* PC端 */
-@media only screen and (min-width: 769px) {
-    .container-nav {
-        display: flex;
-    }
-
-    .div {
-        display: none;
-    }
-
-    .nav-bottom {
-        display: none;
-    }
-
 }
