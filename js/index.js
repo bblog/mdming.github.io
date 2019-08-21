@@ -33,12 +33,7 @@ var index = 0;
 var length = document.querySelectorAll('.items').length;
 
 // 浏览器尺寸变化时进行响应
-window.onresize = function () {
-	document.querySelector('.index').style.height = window.innerHeight + "px" //为模块设置高度为浏览器的高度
-	for (var j = 0; j < length; j++) {
-		document.querySelectorAll('.items')[j].style.width = document.querySelector('.banner').clientWidth + 'px';
-	}
-}
+
 // 初始设置容器、轮播图的宽高
 document.querySelector('.banner-list').style.width = length * document.querySelector('.banner').clientWidth + 'px';
 if (document.body.clientWidth > 768) {
