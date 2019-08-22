@@ -1,4 +1,7 @@
 /* 轮播图 */
+main{
+	border-top: #0000FF 6px solid;
+}
 @media screen {
 	.index {
 
