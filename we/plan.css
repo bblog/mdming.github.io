@@ -437,7 +437,10 @@
 
 /* 适应手机 */
 @media only screen and (max-width:768px) {
-
+main{
+        margin-top: 40px;
+        width: 95%;
+    }
 
     .container-nav {
         display: none;
