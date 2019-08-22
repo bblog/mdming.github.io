@@ -236,6 +236,7 @@
         margin: 100px auto;
         height: 1000px;
     }
+
     .title {
         position: relative;
         width: 100%;
@@ -252,6 +253,7 @@
         line-height: 120px;
         color: orangered;
     }
+
     /* .title {
         position: relative;
         width: 100%;
@@ -277,16 +279,18 @@
         height: 45px;
         background-color: blue;
     } */
-    .massage p{
+    .massage p {
         width: 80%;
         height: 80%;
-        margin:10px auto;
+        margin: 10px auto;
         text-align: left;
     }
-    .massage p span{
+
+    .massage p span {
         color: black;
         font-weight: 800;
     }
+
     .meng {
         text-indent: 2rem;
         margin: 0 auto;
@@ -314,11 +318,13 @@
         background-color: #ffffff;
         font-size: 26px;
     }
-.footer:after{
-    content: " ";
-    display: block;
-    clear: both;
-}
+
+    .footer:after {
+        content: " ";
+        display: block;
+        clear: both;
+    }
+
     .footer-top {
         height: 70px;
         width: 100%;
@@ -432,7 +438,10 @@
         width: 100%;
         margin: 0px;
     }
-
+    main{
+        margin-top: 25px;
+        width: 95%;
+    }
     .min-card {
         width: 45%;
         height: 200px;
