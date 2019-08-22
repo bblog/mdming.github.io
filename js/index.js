@@ -37,9 +37,9 @@ document.querySelector('.index').style.height = 350 + "px" //为模块设置高�
 // 初始设置容器、轮播图的宽高
 document.querySelector('.banner-list').style.width = length * document.querySelector('.banner').clientWidth + 'px';
 if (document.body.clientWidth > 768) {
-	//document.querySelector('.index').style.height = window.innerHeight + "px" //为模块设置高度为PC浏览器的高度
+	document.querySelector('.index').style.height = window.innerHeight + "px" //为模块设置高度为PC浏览器的高度
 } else {
-	document.querySelector('.index').style.height = 350 + "px" //为模块设置高度为浏览器的高度(适应手机)
+	//document.querySelector('.index').style.height = 350 + "px" //为模块设置高度为浏览器的高度(适应手机)
 }
 for (var j = 0; j < length; j++) {
 	document.querySelectorAll('.items')[j].style.width = document.querySelector('.banner').clientWidth + 'px';
