@@ -234,7 +234,7 @@
         border-top: 4px solid orangered;
         box-shadow: #9E9E9E 1px 0px 10px;
         margin: 100px auto;
-        height: 1000px;
+        padding-bottom: 160px;
     }
 
     .title {
@@ -254,31 +254,6 @@
         color: orangered;
     }
 
-    /* .title {
-        position: relative;
-        width: 100%;
-        height: 120px;
-        margin-bottom: 100px;
-    }
-
-    .title h2 {
-        z-index: 1;
-        position: absolute;
-        bottom: 8px;
-        left: 60px;
-        color: #FFEB3B;
-    }
-
-
-
-    .bg {
-        position: absolute;
-        bottom: 0;
-        left: -5px;
-        width: 250px;
-        height: 45px;
-        background-color: blue;
-    } */
     .massage p {
         width: 80%;
         height: 80%;
@@ -291,11 +266,11 @@
         font-weight: 800;
     }
 
-    .meng {
+    .index {
         text-indent: 2rem;
         margin: 0 auto;
-
     }
+
 }
 
 /* 底部栏 */
@@ -372,7 +347,6 @@
         height: 200px;
         display: flex;
         justify-content: center;
-        float: left;
     }
 
     .footer-list {
@@ -392,7 +366,7 @@
         opacity: 0.7;
         position: fixed;
         bottom: 66px;
-        right: -39px;
+        right: -44px;
         background-color: #FFDEAD;
         border: solid 1px gainsboro;
     }
@@ -442,54 +416,7 @@
         margin-top: 25px;
         width: 95%;
     }
-    .min-card {
-        width: 45%;
-        height: 200px;
-    }
-
-    .min-card-left {
-
-        margin-left: 5%
-    }
-
-    .min-card-right {
-
-        margin-right: 5%
-    }
-
-    .card {
-        height: 300px;
-        width: 86%;
-        margin: 5% 7%;
-    }
-
-    .card-img {
-        width: 90%;
-        height: 60%;
-    }
-
-    #min-card-two {
-        position: relative;
-        top: 0;
-        left: 0;
-
-    }
-
-
-
-    .card-h2 {
-        padding: 8px 0;
-    }
-
-
-    .sec-more {
-        padding: 10px 0 30px 0;
-    }
-
-    .section-header {
-        font-size: 16px;
-    }
-
+   
 
 
     .container-nav {

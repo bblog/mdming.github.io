@@ -170,9 +170,10 @@
         padding-bottom: 8px;
     }
 }
+
 /* 遮盖层 */
-@media screen{
-    .cover	{
+@media screen {
+    .cover {
         width: 0;
         overflow: hidden;
         height: 100%;
@@ -184,27 +185,31 @@
         background-color: rgba(18, 18, 18, 0.41);
         transition: all 1s;
     }
-    .content{
+
+    .content {
         width: 300px;
         height: 360px;
         /* border-bottom: 1px solid #000;
         border-radius: 10px; */
-    
+
     }
-    .c-title{
+
+    .c-title {
         background-color: rgba(255, 255, 255, 0.238);
         border-radius: 16px;
-    
+
         font-size: 26px;
         color: red;
     }
-    .content img{
+
+    .content img {
         /* border-bottom: 1px solid #000; */
         border-radius: 16px;
         width: 100%;
         height: 90%;
     }
-    }
+}
+
 /* 主体内容 */
 @media screen {
     .wrap {
@@ -212,12 +217,8 @@
         margin: auto;
     }
 
-    .myweb-nav {
-        /* background-color:white;  */
-    }
-
     .main-h2 {
-        font-size: 40px;
+        font-size: 28px;
         padding: 100px 0;
     }
 
@@ -271,8 +272,6 @@
     }
 
     .myweb-card {
-        /* background-image: url(/img/qianduan.jpg); */
-        cursor: pointer;
         width: 25%;
         height: 50%;
         background-color: white;
@@ -282,108 +281,141 @@
         position: relative;
     }
 
-    .myweb-card:hover {
+    .card-list div:not(:first-child):hover {
         box-shadow: 0 10px 70px 0 rgba(0, 0, 0, .2);
         z-index: 10;
         transform: scale(1.05);
+        cursor: pointer;
+
     }
-    .card-img{
-        /* margin: 10%; */
+
+    .card-img {
         width: 100%;
         height: 100%;
-        /* border-radius: 50%; */
         opacity: 0.7;
     }
-    .myweb-card h2{
-        width: 100%;;
+
+    .myweb-card h2 {
+        width: 100%;
         position: absolute;
         bottom: 20px;
         height: 15%;
         color: orangered;
     }
-  
+
+    #demo div:first-child {
+        background-color: #03A9F4;
+    }
+    #demo div:first-child h2{
+        bottom: 45%;
+    }
+
+    #zj div:first-child {
+        background-color: #00bcd4;
+
+    }
+    #zj div:first-child h2{
+        bottom: 45%;
+    }
+
+    #game div:first-child {
+        background-color: #8BC34A;
+
+    }
+    #game div:first-child h2{
+        bottom: 45%;
+    }
+
+    #qd div:first-child {
+        background-color: #ffc107;
+
+
+    }
+    #qd div:first-child h2{
+        bottom: 45%;
+    }
+
 }
 
 
 /* 底部栏 */
 @media screen {
-	.footer:before {
-		background: #000 linear-gradient(to left, #9871e2, #fc31d0, #28b3f7, blue, #2eaff6, #c851da, #fa32d1);
-		content: "";
-		height: 4px;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-	}
+    .footer:before {
+        background: #000 linear-gradient(to left, #9871e2, #fc31d0, #28b3f7, blue, #2eaff6, #c851da, #fa32d1);
+        content: "";
+        height: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
 
-	.footer {
-		position: relative;
-		margin-top: 3px;
-		width: 100%;
-		text-align: center;
-		background-color: #ffffff;
-		font-size: 26px;
-	}
+    .footer {
+        position: relative;
+        margin-top: 3px;
+        width: 100%;
+        text-align: center;
+        background-color: #ffffff;
+        font-size: 26px;
+    }
 
-	.footer-top {
-		height: 70px;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: rgb(249, 249, 249);
-		/* border-top: 6px solid royalblue; */
-		border-bottom: 1px solid gainsboro;
-	}
+    .footer-top {
+        height: 70px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(249, 249, 249);
+        /* border-top: 6px solid royalblue; */
+        border-bottom: 1px solid gainsboro;
+    }
 
-	.footer-top span {
-		padding-right: 30px;
-	}
+    .footer-top span {
+        padding-right: 30px;
+    }
 
-	.footer-left {
-		padding-top: 40px;
-		width: 50%;
-		height: 200px;
-		float: left;
-		display: flex;
-		justify-content: center;
-		/* background-color: blue; */
-	}
+    .footer-left {
+        padding-top: 40px;
+        width: 50%;
+        height: 200px;
+        float: left;
+        display: flex;
+        justify-content: center;
+        /* background-color: blue; */
+    }
 
-	#qq-f img {
-		width: 45px;
-		height: 35px;
-	}
+    #qq-f img {
+        width: 45px;
+        height: 35px;
+    }
 
-	#weixin-f img {
-		cursor: pointer;
-		width: 35px;
-		height: 35px;
-	}
+    #weixin-f img {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+    }
 
-	.footer-top a {
+    .footer-top a {
 
-		padding: 15px 1px 0 0;
-	}
+        padding: 15px 1px 0 0;
+    }
 
-	.footer-right {
-		padding-top: 40px;
-		width: 50%;
-		height: 200px;
-		display: flex;
-		justify-content: center;
-		float: left;
-	}
+    .footer-right {
+        padding-top: 40px;
+        width: 50%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+    }
 
-	.footer-list {
-		height: 26px;
-	}
+    .footer-list {
+        height: 26px;
+    }
 
-	.footer-list a {
-		color: blue;
-		font-size: 16px;
-	}
+    .footer-list a {
+        color: blue;
+        font-size: 16px;
+    }
 }
 
 
@@ -394,7 +426,7 @@
         opacity: 0.7;
         position: fixed;
         bottom: 66px;
-        right: -39px;
+        right: -44px;
         background-color: #FFDEAD;
         border: solid 1px gainsboro;
     }
@@ -438,19 +470,29 @@
         width: 100%;
         margin: 0px;
     }
-.card-list{
-    height: 400px;
-}
-.wrap{
-    width: 94%;
-}
-.card-list:last-child {
-    margin-bottom: 250px;
-}
-.myweb-list li,
-.myweb-card h2{
-    font-size: 16px;
-}
+    .footer-left, .footer-right {
+        padding: 20px 0;
+    }
+    .footer {
+        font-size: 20px;
+    }
+    .card-list {
+        height: 400px;
+    }
+
+    .wrap {
+        width: 94%;
+    }
+
+    .card-list:last-child {
+        margin-bottom: 250px;
+    }
+
+    .myweb-list li,
+    .myweb-card h2 {
+        font-size: 16px;
+    }
+
     .shield {
         font-size: 10px
     }

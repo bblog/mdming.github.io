@@ -32,14 +32,20 @@ var index = 0;
 
 var length = document.querySelectorAll('.items').length;
 
-// 浏览器尺寸变化时进行响应
-document.querySelector('.index').style.height = 350 + "px" //为模块设置高度为浏览器的高度(适应手机)
+
 // 初始设置容器、轮播图的宽高
 document.querySelector('.banner-list').style.width = length * document.querySelector('.banner').clientWidth + 'px';
 if (document.body.clientWidth > 768) {
+	// 浏览器尺寸变化时进行响应
+window.onresize = function () {
+	document.querySelector('.index').style.height = window.innerHeight + "px" //为模块设置高度为浏览器的高度
+	for (var j = 0; j < length; j++) {
+		document.querySelectorAll('.items')[j].style.width = document.querySelector('.banner').clientWidth + 'px';
+	}
+}
 	document.querySelector('.index').style.height = window.innerHeight + "px" //为模块设置高度为PC浏览器的高度
 } else {
-	document.querySelector('.index').style.height = 350 + "px" //为模块设置高度为浏览器的高度(适应手机)
+	document.querySelector('.index').style.height = 300 + "px" //为模块设置高度为浏览器的高度(适应手机)
 }
 for (var j = 0; j < length; j++) {
 	document.querySelectorAll('.items')[j].style.width = document.querySelector('.banner').clientWidth + 'px';
@@ -126,6 +132,7 @@ document.querySelector('.point').addEventListener("click", function (e) {
 			index = i - 1
 			Next(); //立刻跳转
 			document.querySelector('#go').classList.remove("go-bar")
+	// 延时3秒后重新轮播
 			setTimeout(function () {
 				Interval = setInterval(Next, 5000)
 				document.querySelector('#go').classList.add("go-bar");
@@ -173,4 +180,11 @@ document.querySelector('.banner-list').addEventListener("touchend", (function (e
 		document.querySelector('.banner-list').style.transition = "all 1s"
 		document.querySelector('.banner-list').style.transform = "translate3d(" + width + ",0px, 0px)"
 	}
+	// 延时1秒后重新轮播
+	clearInterval(Interval);
+	document.querySelector('#go').classList.remove("go-bar")
+	setTimeout(function () {
+		Interval = setInterval(Next, 5000)
+		document.querySelector('#go').classList.add("go-bar");
+	}, 1000);
 }))

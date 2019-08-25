@@ -94,7 +94,6 @@
 		height: 200px;
 		display: flex;
 		justify-content: center;
-		float: left;
 	}
 
 	.footer-list {
@@ -363,7 +362,8 @@
     .footer {
         width: 100%;
         text-align: center;
-        background-color: skyblue;
+        background-color: white;
+        padding-bottom: 40px;
 
     }
 
@@ -419,7 +419,7 @@
         opacity: 0.7;
         position: fixed;
         bottom: 66px;
-        right: -39px;
+        right: -44px;
         background-color: #FFDEAD;
         border: solid 1px gainsboro;
     }
@@ -443,10 +443,7 @@
         width: 100%;
     }
 
-    #qq {
-        color: white;
-    }
-
+ 
     .aside .top {
 
         /* padding: 0px 4px; */
@@ -467,7 +464,10 @@
         width: 100%;
         margin: 0px;
     }
-
+.list a{
+    margin: 0 10%;
+    width: 80%;
+}
     .list {
         width: 100%;
     }
