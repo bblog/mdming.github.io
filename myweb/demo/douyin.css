@@ -1,0 +1,50 @@
+html,
+body,
+main,.video,
+video {
+    /* 指定可替换元素的内容应该如何适应到其使用的高度和宽度确定的框。cover
+被替换的内容在保持其宽高比的同时填充元素的整个内容框。如果对象的宽高比与内容框不相匹配，该对象将被剪裁以适应内容框。 */
+    object-fit: fill;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color:white;
+}
+.video-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    list-style-type: none;
+}
+.video-list::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+.video-list li{
+    border-radius: 3px;
+    padding: 3px 6px;
+    background-color: #ffffff57;
+    margin: 0 10px;
+    float: left;
+}
+.video-list li:not(:first-child){
+    cursor: pointer;
+}
+.video-list li a{
+    text-decoration: none;
+    color: black;
+}
+.content {
+    bottom: 70px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+#tip{
+    color: blue;
+}
