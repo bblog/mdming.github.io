@@ -1,0 +1,72 @@
+.xh-shield {
+	border-radius: 3px;
+	text-shadow: none;
+	font-size: 12px;
+	display: inline-block;
+	line-height: 16px;
+}
+
+
+.xh-shield+.xh-shield{margin-left:0.2rem;}
+.xh-shield a{color:white;text-decoration:none;}
+.xh-shield.xh-purple a span:only-child{border-radius: 3px;}
+.xh-shield.xh-pink a span:only-child{border-radius: 3px;}
+.xh-shield.xh-blue a span:only-child{border-radius: 3px;}
+.xh-shield.xh-yellowgreen a span:only-child{border-radius: 3px;}
+.xh-shield.xh-red a span:only-child{border-radius: 3px;}
+.xh-shield.xh-yellow a span:only-child{border-radius: 3px;}
+.xh-shield.xh-green a span:only-child{border-radius: 3px;}
+.xh-shield.xh-brightgreen a span:only-child{border-radius: 3px;}
+.xh-shield.xh-orange a span:only-child{border-radius: 3px;}
+
+/* .xh-tyh  { */
+	    
+        
+        /* display:line-block; */
+        /* list-style:none; */
+     /* } */
+
+.xh-shield a span:first-child {
+	display: inline-block;
+	background-color: #3D3D3D;
+	padding: 2px 6px 2px 6px;
+	border-radius:3px 0 0 3px; 
+}
+
+
+.xh-shield a span:last-child{
+	display: inline-block;	
+	padding: 2px 6px 2px 6px;
+	border-radius:0 3px 3px 0;
+}
+.xh-shield.xh-orange a span:last-child{
+	background-color: #ef7b3c;
+}
+.xh-shield.xh-brightgreen a span:last-child{
+	background-color: #42bc14;
+}
+.xh-shield.xh-green a span:last-child{
+	background-color: #98c611;
+}
+.xh-shield.xh-yellow a span:last-child{
+	background-color: #D8B024;
+}
+.xh-shield.xh-red a span:last-child{
+	background-color: #cc5640;
+}
+.xh-shield.xh-yellowgreen a span:last-child{
+	background-color: #a4a62b;
+}
+.xh-shield.xh-blue a span:last-child{
+	background-color: #0475b5;
+}
+.xh-shield.xh-purple a span:last-child{
+	background-color: #812bd0;
+
+}
+.xh-shield.xh-pink a span:last-child{
+	background-color: #e760a4;
+	
+    
+
+}
